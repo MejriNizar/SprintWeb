@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+
+
+{% block header %}
+
+        <div class="banner_w3lspvt">
+
+            <div class="form_register">
+
+                <div class="banner-bo">
+                    <h1><a href="index.html" class="logo text-wh">World_Friendship</a></h1>
+                    <p class="text-bl text-li mt-3 border-bottom pb-4">Voyager sans rencontrer l'autre, ce n'est pas
+                        voyager, c'est se déplacer. </p>
+                </div>
+            </div>
+
+            <div class="formulaire">
+                <h2 class="mb-5" style="color: #0998b0; font-family: cursive; ">{% trans %} Inscrivez-Vous {% endtrans %}</h2>
+                {% include "@FOSUser/Registration/register_content.html.twig" %}
+            </div>
+        </div>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $('#fos_user_registration_form_roles_0').on('change', function (){
+		
+        if ($(this).val() == 'ROLE_ORGANISATEUR') {
+            $('#type').removeClass('hidden');
+            $('#description').removeClass('hidden');
+        } else {
+            $('#type').addClass('hidden');
+            $('#description').addClass('hidden');
+        }
+        if ($(this).val() == 'ROLE_VOYAGEUR') {
+            $('#voyageur').removeClass('hidden');
+
+        } else {
+            $('#voyageur').addClass('hidden');
+
+
+        }
+        if ($(this).val() == 'ROLE_GUIDE') {
+            $('#guide').removeClass('hidden');
+
+        } else {
+            $('#guide').addClass('hidden');
+
+        }
+
+        if ($(this).val() == 'ROLE_FAMILLE') {
+            $('#famille').removeClass('hidden');
+
+        } else {
+            $('#famille').addClass('hidden');
+
+        }
+    });
+</script>
+{% endblock %}
+
+
+
+

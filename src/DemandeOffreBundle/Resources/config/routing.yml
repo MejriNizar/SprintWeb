@@ -1,0 +1,3 @@
+demande_offre_homepage:
+    path:     /
+    defaults: { _controller: DemandeOffreBundle:Default:index }

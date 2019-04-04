@@ -1,0 +1,65 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+<div class="form-group">
+	<label>{% trans %}Role: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.roles) }}
+	<label>{% trans %}Nom: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.nom) }}
+	<label>{% trans %}Prénom: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.prenom) }}
+	<label>{% trans %}Téléphone: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.tel) }}
+	<label>{% trans %}Date de naissance: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.date_nais) }}
+	<label>{% trans %}Pays: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.pays) }}
+</div>
+
+<div id="type" class="form-group hidden">
+	<label>{% trans %}Nom de l'organisateur: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.nom_organisation) }}
+	<label>{% trans %}Type: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.type) }}
+	<label>{% trans %}Adresse: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.adresse) }}
+	<label>{% trans %}Site Web: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.site_web) }}
+	<label>{% trans %}Description: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.description) }}
+
+</div>
+
+<div id="voyageur" class="form-group hidden">
+	<label>{% trans %}Date de naissance: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.date_nais) }}
+	<label>{% trans %}Nationalité: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.nationalite) }}
+	<label>{% trans %}Préférence: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.preference) }}
+
+</div>
+
+<div id="guide" class="form-group hidden">
+	<label>{% trans %}Secteur: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.secteur) }}
+	<label>{% trans %}Experience: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.experience) }}
+	{{ form_label(form.secourisme) }}
+	{{ form_widget(form.secourisme) }}
+	<label>{% trans %}Disponibilité: {% endtrans %}<i style="color:#B22222;"> </i></label>
+	{{ form_widget(form.dispo) }}
+
+</div>
+<div id="famille" class="form-group hidden">
+
+</div>
+
+{{ form_widget(form) }}
+<div>
+	<input type="submit" value="{{ 'registration.submit'|trans }}" />
+
+</div>
+{{ form_end(form) }}

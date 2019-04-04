@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <!-- about -->
+    <section class="about py-5" id="about">
+        <div class="container pt-xl-5 pt-lg-3">
+            <div class="row about-grids">
+                <div class="col-lg-5 about-left">
+                    <img src="{{ asset('images/ab.jpg') }}" alt="" class="img-fluid"/>
+                </div>
+                <div class="col-lg-4 about-right mt-lg-0 mt-sm-5 mt-4">
+                    <h3 class="mb-3 text-bl let">Never Stop Exploring</h3>
+                    <p class="mb-3">Integer pulvinar leo id viverra feugiat. Pellentesque libero ut justo, semper at tempus
+                        vel,
+                        ultrices in ligula.</p>
+                    <p>Semper at tempus vel, ultrices in ligula. Integer pulvinar leo id viverra feugiat.</p>
+                    <a href="single.html" class="btn button-style-3">Learn More</a>
+                </div>
+                <div class="col-lg-3 about-right p-lg-0 mt-lg-0 mt-sm-5 mt-4">
+                    <h3 class="mb-3 text-bl let">Qui Nous Sommes ?</h3>
+                    <p class="mb-3">Nulla sollicit udin velit semper at tempus vel, ultrices in ligula leo sed viverra
+                        feugiat Nulla
+                        sollicit udin velit.</p>
+                    <p>Integer pulvinar leo id viverra feugiat. Pellentesque libero justo, semper at tempus vel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //about -->
+
+    <!-- places -->
+    <section class="trav-grids py-5" id="desti">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="title-bg text-center py-5 mb-5">
+                <h3 class="tittle text-wh let mb-2 pt-lg-3">Nos Experiences</h3>
+                <p class="text-li mx-auto pb-lg-3">Le monde est un livre et ceux qui ne voyagent pas n’en lisent qu’une
+                    page</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mt-4">
+                    <div class="grids-tem-one">
+                        <div class="row">
+                            <div class="col-5 grids-img-left">
+                                <img src="{{ asset('images/tra1.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7 right-cont">
+                                <h4 class="mb-3 let tm-clr">Paris</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem
+                                    aperiamjum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="grids-tem-one">
+                        <div class="row">
+                            <div class="col-5 grids-img-left">
+                                <img src="{{ asset('images/tra2.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7 right-cont">
+                                <h4 class="mb-3 let tm-clr">London</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem
+                                    aperiamjum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-lg-3">
+                <div class="col-lg-6 mt-4">
+                    <div class="grids-tem-one">
+                        <div class="row">
+                            <div class="col-5 grids-img-left">
+                                <img src="{{ asset('images/tra3.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7 right-cont">
+                                <h4 class="mb-3 let tm-clr">Djerba</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem
+                                    aperiamjum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <div class="grids-tem-one">
+                        <div class="row">
+                            <div class="col-5 grids-img-left">
+                                <img src="{{ asset('images/tra4.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-7 right-cont">
+                                <h4 class="mb-3 let tm-clr">Tabarka</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem
+                                    aperiamjum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //places -->
+
+    <!-- what -->
+    <div class="serives-w3pvt-mobi bg-li py-5" id="what">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="title-bg text-center py-5 mb-5">
+                <h3 class="tittle text-wh let mb-2 pt-sm-3">Notre Mission</h3>
+                <p class="text-li mx-auto pb-sm-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                    fugit, sed
+                    quia consequuntur</p>
+            </div>
+            <div class="row welcome-bottom pt-4">
+                <div class="col-md-4 welcome-grid">
+                    <span class="fa fa-free-code-camp"></span>
+                    <h4 class="my-3">Camping</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+                <div class="col-md-4 welcome-grid my-md-0 my-4">
+                    <span class="fa fa-fighter-jet"></span>
+                    <h4 class="my-3">Voyages Organisés</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+                <div class="col-md-4 welcome-grid">
+                    <span class="fa fa-map-signs"></span>
+                    <h4 class="my-3">Guides Expérimentés</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+            </div>
+            <div class="row welcome-bottom mb-xl-4 mt-md-5 my-md-0 my-4">
+                <div class="col-md-4 welcome-grid">
+                    <span class="fa fa-hotel"></span>
+                    <h4 class="my-3">Annonce</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+                <div class="col-md-4 welcome-grid my-md-0 my-4">
+                    <span class="fa fa-bus"></span>
+                    <h4 class="my-3">Randonnée</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+                <div class="col-md-4 welcome-grid">
+                    <span class="fa fa-shopping-basket"></span>
+                    <h4 class="my-3">Articles</h4>
+                    <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

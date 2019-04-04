@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}UserBundle:Security:add{% endblock %}
+
+
+{% block header %}
+<div class="banner_w3lspvt">
+    <div class="nav_w3ls pt-4 pb-3 text-center">
+        <nav>
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop"/>
+            <ul class="menu">
+                <li><a href="{{ path('organisateur_home') }}" class="active">Accueil</a></li>
+                <li><a href="{{ path('fos_user_profile_show') }}">Profile</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-2" class="toggle toogle-2">Evenement<span class="fa fa-angle-down"
+                                                                               aria-hidden="true"></span>
+                    </label>
+                    <a href=>Evenements<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <input type="checkbox" id="drop-2"/>
+                    <ul class="text-left">
+                        <li><a href="{{ path('evenement_affiche') }}" class="drop-text">Mes Evenements</a></li>
+                        <li><a href="{{ path('evenement_new') }}" class="drop-text">Ajouter Evenement</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="gallery.html">Galerie</a></li>
+            </ul>
+            <h1>Bonsoir Organisateur</h1>
+            <a href="{{ path('fos_user_profile_show') }}">profile</a>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

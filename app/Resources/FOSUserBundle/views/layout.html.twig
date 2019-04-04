@@ -1,0 +1,215 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Wander Travel Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="keywords"
+          content="Wander Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!--// Meta tag Keywords -->
+    {% block stylesheets %}
+        {% stylesheets
+            'front/css/bootstrap.css'
+            'front/css/style.css'
+            'front/css/font-awesome.min.css'
+            filter='cssrewrite' output='css/compiled/app.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+
+{% block header %}
+    <!-- home -->
+    <div id="home">
+        <!-- banner -->
+        <div class="banner_w3lspvt">
+            <!-- nav -->
+            <div class="nav_w3ls pt-4 pb-3 text-center">
+                <nav>
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu">
+                        <li><a href="index.html" class="active">Accueil</a></li>
+                        <li><a href="">Programmes</a></li>
+                        <li>
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-2" class="toggle toogle-2">Evenement<span class="fa fa-angle-down"
+                                                                                       aria-hidden="true"></span>
+                            </label>
+                            <a href="#">Evenements<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-2"/>
+                            <ul class="text-left">
+                                <li><a href="#about" class="drop-text">Voyage</a></li>
+                                <li><a href="#what" class="drop-text">Randonnée</a></li>
+                                <li><a href="#blog" class="drop-text">Excursion</a></li>
+                                <li><a href="single.html" class="drop-text">Camping</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="gallery.html">Galerie</a></li>
+                        <li><a href="#">Produit</a></li>
+                        <li><a href="#">Guide</a></li>
+                        <li><a href="#">Annonce</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- //nav -->
+            <div class="banner-text text-right">
+                <div class="banner-bot">
+                    <h1><a href="index.html" class="logo text-wh">World_Friendship</a></h1>
+                    <p class="text-bl text-li mt-3 border-bottom pb-4">Voyager sans rencontrer l'autre, ce n'est pas
+                        voyager, c'est se déplacer. </p>
+                    <div class="social-icons mt-4">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://www.facebook.com/World_Friendship-1112347622278685/?modal=admin_todo_tour">
+                                    <span class="fa fa-facebook"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-youtube"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ app.user.username }} Connected ! <br>
+                        <a href="{{ path('fos_user_security_logout') }}">Sign out</a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}" class="btn button-style">Connexion</a></br>
+                        <a href="{{ path('fos_user_registration_register') }}">Inscrivez_Vous !</a>
+                    {% endif %}
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+    </div>
+    <!-- //home -->
+{% endblock %}
+
+
+{% block body %}
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-4">
+        <div class="container py-xl-5 py-3">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-8 footer-grid">
+                    <h2 class="mb-3">
+                        <a class="logo-footer tm-clr let" href="index.html">World_Friendship</a>
+                    </h2>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu.</p>
+                </div>
+                <div class="offset-lg-1 col-lg-2 col-sm-6 col-4 footer-grid mt-lg-0 mt-4">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html">Index</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#what">What We Do</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#desti">Destination</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#blog">Blog</a>
+                        </li>
+                        <li>
+                            <a href="single.html">Blog Details</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6 footer-grid mt-lg-0 mt-4">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#some">Some More</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- footer social icons -->
+    <div class="social-icons-footer text-center my-3">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#">
+                    <span class="fa fa-facebook"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-youtube"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-instagram"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- //footer social icons -->
+    <!-- copyright -->
+    <div class="copy_right mb-5">
+        <p class="text-center text-bl let">
+            <a href=""></a>
+        </p>
+    </div>
+    <!-- //copyright -->
+
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center"></a>
+    <!-- //move top icon -->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="asset{{('back/assets/vendor/jquery/jquery-3.3.1.min.js')}}"></script>
+{% endblock %}
+</body>
+</html>
