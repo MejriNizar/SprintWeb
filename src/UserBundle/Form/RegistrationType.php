@@ -20,13 +20,12 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
-            ->add('prenom')
-            ->add('tel')
-            ->add('date_nais', null ,array(
-                'widget' => 'choice',
-                'years' => range(date('Y'), date('Y')-200),
-            ))
+            ->add('username')
+            ->add('cin')
+            ->add('email')
+            ->add('password')
+            ->add('roles')
+            ->add('num_tel')
             ->add('roles', CollectionType::class, array(
                 'label' => 'Role',
                 'entry_type' => ChoiceType::class,
@@ -34,51 +33,33 @@ class RegistrationType extends AbstractType
                     'label' => false,
                     'expanded' => false,
                     'choices' => array(
-                        'Voyageur' => 'ROLE_CLIENT',
-                        'Organisateur' => 'ROLE_ORGANISATEUR',
-                        'Guide' => 'ROLE_GUIDE',
-                        'Famille' => 'ROLE_FAMILLE'
-                    ),
-                    'data' => 'ROLE_VOYAGEUR'
-                )
-            ))
-            ->add('type',
-                ChoiceType::class, array(
-                    'choices'  => array(
-                        'Agence' => 'Agence',
-                        'Club' => 'Club'
+                        'Client' => 'ROLE_CLIENT',
+                        'Prestatire' => 'ROLE_PRESTATAIRE',
+                        'Admin' => 'ROLE_ADMIN',
 
                     ),
-                    'data' => 'Voyage'
-                ))
-            ->add ('description')
-            ->add ('adresse')
-            ->add('pays')
-            ->add('preference',ChoiceType::class,array(
-                'choices'=>array(
-                    'Voyage'=>'Voyages',
-                    'Randonée'=>'Randonée',
-                    'Camping'=>'Camping',
-                    'Excursion'=>'Excursion',
+                    'data' => 'ROLE_CLIENT'
                 )
             ))
-            ->add('nationalite')
-            ->add('secteur')
-            ->add('experience')
-            ->add('secourisme',CheckboxType::class,array('required' => false))
-            ->add('secteur')
-            ->add('dispo',null ,array(
-                'widget' => 'choice',
-                'years' => range(date('Y'), date('Y')+10),
+
+            ->add('roles', CollectionType::class, array(
+                'label' => 'Role',
+                'entry_type' => ChoiceType::class,
+                'entry_options' => array(
+                    'label' => false,
+                    'expanded' => false,
+                    'choices' => array(
+                        'Client' => 'ROLE_CLIENT',
+
+
+                        'Prestataire'=>'ROLE_PRESTATAIRE',
+
+                    ),
+                    'data' => 'ROLE_CLIENT'
+                )
             ))
-            ->add('site_web')
-            ->add('nom_organisation')
-            ->add('photo', FileType::class, [
-                'data_class' => null,
-                'multiple' => false,
-                'attr'     => [
-                    'accept' => 'image/*',
-                ]])
+
+
 
         ;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DemandeOffreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -49,9 +49,9 @@ class Demande
     private $description;
 
     /**
-     * @var \FosUser
+     * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\FosUser")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * })
@@ -59,7 +59,7 @@ class Demande
     private $idUser;
 
     /**
-     * @return \FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -67,7 +67,7 @@ class Demande
     }
 
     /**
-     * @param \FosUser $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
@@ -156,7 +156,7 @@ class Demande
     }
 
     /**
-     * @return \FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getUser()
     {
@@ -164,7 +164,7 @@ class Demande
     }
 
     /**
-     * @param \FosUser $user
+     * @param \AppBundle\Entity\FosUser $user
      */
     public function setUser($user)
     {

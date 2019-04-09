@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace CommandesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,16 +22,22 @@ class Facture
     private $idFacture;
 
     /**
-     * @var integer
+     * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id")
+     * })
      */
     private $idUser;
 
     /**
-     * @var integer
+     * @var \CommandesBundle\Entity\Commande
      *
-     * @ORM\Column(name="id_commande", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Commande")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idCommande", referencedColumnName="idCommande")
+     * })
      */
     private $idCommande;
 
@@ -59,7 +65,7 @@ class Facture
     }
 
     /**
-     * @return int
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -67,7 +73,7 @@ class Facture
     }
 
     /**
-     * @param int $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
@@ -75,7 +81,7 @@ class Facture
     }
 
     /**
-     * @return int
+     * @return \CommandesBundle\Entity\Commande
      */
     public function getIdCommande()
     {
@@ -83,7 +89,7 @@ class Facture
     }
 
     /**
-     * @param int $idCommande
+     * @param \CommandesBundle\Entity\Commande $idCommande
      */
     public function setIdCommande($idCommande)
     {

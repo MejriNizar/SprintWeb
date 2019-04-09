@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace DemandeOffreBundle\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
@@ -54,14 +54,36 @@ class Offre
     private $demande;
 
     /**
-     * @var \service
+     * @var \ServiceBundle\Entity\service
      *
-     * @ORM\ManyToOne(targetEntity="service")
+     * @ORM\ManyToOne(targetEntity="\ServiceBundle\Entity\service")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="Service_id", referencedColumnName="id")
      * })
      */
     private $service;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=255)
+     */
+    private $photo;
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
 
 
     public function getId()
@@ -85,9 +107,9 @@ class Offre
         return $this->budget;
     }
     /**
-     * @var \FosUser
+     * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\FosUser")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * })
@@ -95,7 +117,7 @@ class Offre
     private $idUser;
 
     /**
-     * @return \FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -103,7 +125,7 @@ class Offre
     }
 
     /**
-     * @param \FosUser $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
@@ -167,7 +189,7 @@ class Offre
     }
 
     /**
-     * @return \Service
+     * @return \ServiceBundle\Entity\Service
      */
     public function getService()
     {
@@ -175,7 +197,7 @@ class Offre
     }
 
     /**
-     * @param \Service $service
+     * @param \ServiceBundle\Entity\Service $service
      */
     public function setService($service)
     {
@@ -183,7 +205,7 @@ class Offre
     }
 
     /**
-     * @return \FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getUser()
     {
@@ -191,7 +213,7 @@ class Offre
     }
 
     /**
-     * @param \FosUser $user
+     * @param \AppBundle\Entity\FosUser $user
      */
     public function setUser($user)
     {

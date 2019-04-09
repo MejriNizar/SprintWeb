@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace ForumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -36,9 +36,12 @@ class Question
     private $categorie;
 
     /**
-     * @var integer
+     * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id")
+     * })
      */
     private $idUser;
 
@@ -126,7 +129,7 @@ class Question
     }
 
     /**
-     * @return int
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -134,12 +137,16 @@ class Question
     }
 
     /**
-     * @param int $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
         $this->idUser = $idUser;
     }
+
+
+
+
 
     /**
      * @return \DateTime

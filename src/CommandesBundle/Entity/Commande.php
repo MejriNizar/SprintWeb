@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace CommandesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -117,7 +117,7 @@ class Commande
     }
 
     /**
-     * @return FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -125,7 +125,7 @@ class Commande
     }
 
     /**
-     * @param FosUser $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {

@@ -6,7 +6,7 @@
  * Time: 19:15
  */
 
-namespace AppBundle\Entity;
+namespace  ServiceBundle\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
@@ -36,25 +36,21 @@ class service
     private $nom;
 
     /**
-     * @var \ServiceBundle\Entity\categorie
+     * @var  \ServiceBundle\Entity\categorie
      *
-     *  @ORM\ManyToOne(targetEntity="\ServiceBundle\Entity\categorie")
+     *  @ORM\ManyToOne(targetEntity="categorie")
+     *
      *  @ORM\JoinColumns({
      * @ORM\JoinColumn(name="idCateg", referencedColumnName="id")
      *  })
      */
 
-
-
-
-
-
     private $idCateg;
 
     /**
-     * @var \FosUser
+     * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\FosUser")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * })
@@ -139,7 +135,7 @@ class service
     }
 
     /**
-     * @return \FosUser
+     * @return \AppBundle\Entity\FosUser
      */
     public function getIdUser()
     {
@@ -147,7 +143,7 @@ class service
     }
 
     /**
-     * @param \FosUser $idUser
+     * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
