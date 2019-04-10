@@ -2,7 +2,9 @@
 
 namespace DemandeOffreBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,10 +19,17 @@ class OffreType extends AbstractType
             ->add('budget')
             ->add('titre')
             ->add('description')
-            ->add('photo')
-            ->add('demande')
-            ->add('service')
-            ->add('idUser');
+            ->add('service',EntityType::class
+                ,array('class'=>'ServiceBundle:service','choice_label'=>'nom','multiple'=>false),
+                array('label' => 'form.offre', 'translation_domain' => 'ServiceBundle'))
+
+        ->add('photo', FileType::class, [
+                'data_class' => null,
+                'multiple' => false,
+                'attr'     => [
+                    'accept' => 'image/*',
+                ]])
+         ;
     }/**
      * {@inheritdoc}
      */

@@ -14,14 +14,21 @@ Demande:
     defaults: { _controller: DemandeOffreBundle:Default:index }
 
 
-affichage_la_liste_d_annonce:
+affichage_la_liste_d_offre:
     path:     /prestataire/affichage
     defaults: { _controller: DemandeOffreBundle:Default:affichage }
 
-ajout_annonce:
+ajout_offre:
     path:     /prestataire/home/ajout
     defaults: { _controller: DemandeOffreBundle:Default:ajout }
 
+modifier_une_offre:
+    path:     /prestataire/home/modifier/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:modifier }
+
+supprimer_une_offre:
+    path:     /prestataire/home/supprimer/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:supprimer }
 
 
 

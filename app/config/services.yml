@@ -4,6 +4,7 @@ parameters:
     #parameter_name: value
     annonce_directory: '%kernel.project_dir%/public/uploads/Photos'
 
+
 services:
     # default configuration for services in *this* file
     _defaults:
