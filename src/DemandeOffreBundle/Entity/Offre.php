@@ -28,6 +28,12 @@ class Offre
      * @ORM\Column(name="budget", type="integer", nullable=false)
      */
     private $budget;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCreation", type="date", nullable=false)
+     */
+    private $datecreation;
 
     /**
      * @var string
@@ -218,6 +224,22 @@ class Offre
     public function setUser($user)
     {
         $this->user = $user;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatecreation()
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param \DateTime $datecreation
+     */
+    public function setDatecreation($datecreation)
+    {
+        $this->datecreation = $datecreation;
     }
 
 

@@ -15,8 +15,12 @@ Demande:
 
 
 affichage_la_liste_d_offre:
-    path:     /prestataire/affichage
+    path:     /prestataire/home/affichage
     defaults: { _controller: DemandeOffreBundle:Default:affichage }
+
+affichage_la_liste_d_demande:
+    path:     /client/home/affichageDemande
+    defaults: { _controller: DemandeOffreBundle:Default:affichageDemande }
 
 ajout_offre:
     path:     /prestataire/home/ajout
@@ -30,8 +34,13 @@ supprimer_une_offre:
     path:     /prestataire/home/supprimer/{id}
     defaults: { _controller: DemandeOffreBundle:Default:supprimer }
 
+Afficher_All_offre:
+    path:   /client/home/offre
+    defaults: { _controller: DemandeOffreBundle:Default:afficherAllOffre }
 
-
+Ajouter_demande:
+    path: /client/home/demande/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:ajouterDemande }
 
 
 

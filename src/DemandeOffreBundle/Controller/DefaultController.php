@@ -2,7 +2,9 @@
 
 namespace DemandeOffreBundle\Controller;
 use AppBundle\Entity\FosUser;
+use DemandeOffreBundle\Entity\Demande;
 use DemandeOffreBundle\Entity\Offre;
+use DemandeOffreBundle\Form\DemandeType;
 use DemandeOffreBundle\Form\OffreType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,6 +52,7 @@ class DefaultController extends Controller
             // updates the 'brochure' property to store the PDF file name
             // instead of its contents
             $offre->setPhoto($fileName);
+            $offre->setDatecreation(new \DateTime('now'));
             $offre->setIdUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($offre);
@@ -108,4 +111,62 @@ class DefaultController extends Controller
         return $this->render('@DemandeOffre/Default/modifier.html.twig', array('form'=>$form->createView()));
     }
 
+ /*   public function modifierDAction(Request $request,$id)
+    {
+
+        $em=$this->getDoctrine();
+        $offres=$em->getRepository(Offre::class)->find($id);
+        $form=$this->createForm(OffreType::class, $offres);
+        $form=$form->handleRequest($request);
+        if($form-> isValid())
+        {
+            $em=$this->getDoctrine()->getManager()->flush();
+            return $this -> redirectToRoute('affichage_la_liste_d_offre');
+        }
+        return $this->render('@DemandeOffre/Default/modifier.html.twig', array('form'=>$form->createView()));
+    }
+
+*/
+
+    public function afficherAllOffreAction(){
+        $offres=$this->getDoctrine()->getRepository(Offre::class)->findAll();
+        return $this->render('@DemandeOffre/Default/AllOffre.html.twig',array('offres'=>$offres));
+
+    }
+
+    public function ajouterDemandeAction(Request $request,$id){
+        $repositoryCat = $this->getDoctrine()->getRepository(Offre::class);
+        $offres = $repositoryCat->find($id);
+        $Demande=new Demande();
+        //prepare the form with the function: createForm()
+        $form=$this->createForm(DemandeType::class,$Demande);
+        //extract the form answer from the received request
+        $form=$form->handleRequest($request);
+        //if this form is valid
+        if($form->isValid()){
+            $Demande->setDatecreation(new \DateTime('now'));
+            $Demande->setIdoffre($offres);
+            $Demande->setIdUser($this->getUser());
+              $em = $this->getDoctrine()->getManager();
+            $em->persist($Demande);
+            $em->flush();
+            //persist the object $modele in the ORM
+            //redirect the route after the add
+            return $this->redirectToRoute('Afficher_All_offre');
+
+        }
+        return $this->render('@DemandeOffre/Default/Ajouter.html.twig',
+            array(
+                'form'=>$form->createView(),'id'=>$id,'annonce'=>$offres
+            ));
+
+    }
+    public function affichageDemandeAction()
+    {
+
+        $user=$this->getUser();
+
+        $Demande=$this->getDoctrine()->getRepository(Demande::class)->findByIdUser(array('user'=>$user->getId()));
+        return $this->render('@DemandeOffre/Default/affichageDemande.html.twig',array('demandes'=>$Demande));
+    }
 }

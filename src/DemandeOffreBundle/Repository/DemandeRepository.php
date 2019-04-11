@@ -9,7 +9,17 @@
 namespace DemandeOffreBundle\Repository;
 
 
-class DemandeRepository
+class DemandeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function DemandeDQL($id){
+
+        $query=$this->getEntityManager()
+            ->createQuery("Select d from DemandeOffrebundle:Demande d ")
+            ->setParameter('id',$id);
+        return $query->getResult();
+
+
+    }
+
 
 }

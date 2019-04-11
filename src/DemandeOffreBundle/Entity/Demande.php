@@ -26,6 +26,33 @@ class Demande
      * @ORM\Column(name="budget", type="integer", nullable=false)
      */
     private $budget;
+    /**
+     * @var \Offre
+     *
+     * @ORM\ManyToOne(targetEntity="Offre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id")
+     * })
+     */
+    private $offre;
+
+    /**
+     * @return \Offre
+     */
+    public function getOffre()
+    {
+        return $this->offre;
+    }
+
+    /**
+     * @param \Offre $offre
+     */
+    public function setOffre($offre)
+    {
+        $this->offre = $offre;
+    }
+
+
 
     /**
      * @var \DateTime
@@ -58,6 +85,15 @@ class Demande
      */
     private $idUser;
 
+    /**
+     * @var \Offre
+     *
+     * @ORM\ManyToOne(targetEntity="Offre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id")
+     * })
+     */
+    private $idoffre;
     /**
      * @return \AppBundle\Entity\FosUser
      */
@@ -169,6 +205,22 @@ class Demande
     public function setUser($user)
     {
         $this->user = $user;
+    }
+
+    /**
+     * @return \Offre
+     */
+    public function getIdoffre()
+    {
+        return $this->idoffre;
+    }
+
+    /**
+     * @param \Offre $idoffre
+     */
+    public function setIdoffre($idoffre)
+    {
+        $this->idoffre = $idoffre;
     }
 
 
