@@ -273,7 +273,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FixitF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FixitF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -356,12 +366,12 @@
       <workItem from="1555428540734" duration="1739000" />
       <workItem from="1555456913606" duration="1389000" />
       <workItem from="1555588940262" duration="12369000" />
-      <workItem from="1555609264871" duration="956000" />
+      <workItem from="1555609264871" duration="1551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151524000" />
+    <option name="totallyTimeSpent" value="152119000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,7 +383,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20201342" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
