@@ -32,12 +32,9 @@ class Facture
     private $idUser;
 
     /**
-     * @var \CommandesBundle\Entity\Commande
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Commande")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idCommande", referencedColumnName="idCommande")
-     * })
+     * @ORM\Column(name="idCommande", type="integer", nullable=true)
      */
     private $idCommande;
 

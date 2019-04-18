@@ -28,7 +28,28 @@ class Fournisseur
      */
     private $nom;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero", type="string", length=50, nullable=true)
+     */
+    private $numero;
 
+    /**
+     * @return string
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param string $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
 
 
     /**

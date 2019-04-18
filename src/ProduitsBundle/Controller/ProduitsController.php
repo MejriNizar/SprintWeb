@@ -4,6 +4,7 @@ namespace ProduitsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ProduitsBundle\Entity\Produit;
+use ProduitsBundle\Entity\Fournisseur;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -41,9 +42,11 @@ class ProduitsController extends Controller
             $fileName = $file->getClientOriginalName();
             $file->move($this->container->getParameter('path_image_produit'),$fileName);
             $Produit->setImage($fileName);
+            $dt=new \DateTime();
+            $dt->add(new \DateInterval('PT1H'));
+            $Produit->setDatecreation($dt);
 
 
-            $em = $this->getDoctrine()->getManager();
             $em->persist($Produit);
             $em->flush();
             return $this->redirectToRoute('produits_listeProduit');
@@ -52,6 +55,89 @@ class ProduitsController extends Controller
         }
         return $this->render('ProduitsBundle:Default:ajoutproduit.html.twig',array("fournisseurs"=>$fournisseurs));
 
+
+    }
+
+
+    public function consulterProduitAction(){
+        $em= $this->getDoctrine()->getManager();
+        $Produits=$em->getRepository("ProduitsBundle:Produit")->findAll();
+        return $this->render('ProduitsBundle:Default:consulter_produits.html.twig', array("produits"=>$Produits));
+
+    }
+
+    public function listeFournisseurAction(){
+        $em= $this->getDoctrine()->getManager();
+        $Fournisseurs=$em->getRepository("ProduitsBundle:Fournisseur")->findAll();
+        return $this->render('ProduitsBundle:Default:liste_fournisseurs.html.twig', array("fournisseurs"=>$Fournisseurs));
+
+    }
+
+    public function ajoutfournisseurAction(Request $request)
+    {
+
+        $Fournisseur = new Fournisseur();
+        $em= $this->getDoctrine()->getManager();
+
+        if ($request->isMethod('POST')) {
+
+            $Fournisseur->setNom($request->get('nom'));
+            $Fournisseur->setNumero($request->get('numero'));
+
+            $em->persist($Fournisseur);
+            $em->flush();
+            return $this->redirectToRoute('produits_listeFournisseur');
+
+
+        }
+        return $this->render('ProduitsBundle:Default:ajoutfournisseur.html.twig');
+
+
+    }
+
+    public function modifierproduitAction(Produit $Produit,Request $request)
+    {
+        $em= $this->getDoctrine()->getManager();
+        $fournisseurs = $em->getRepository("ProduitsBundle:Fournisseur")->findAll();
+        if ($request->isMethod('POST')) {
+
+            $Produit->setNom($request->get('nom'));
+            $Produit->setDescription($request->get('description'));
+            $Produit->setReference($request->get('reference'));
+            $Produit->setPrix($request->get('prix'));
+            $Produit->setCategorie($request->get('categorie'));
+            $Produit->setQuantite($request->get('quantite'));
+            if($request->files->get('image')) {
+                $file = $request->files->get('image');
+                $fileName = $file->getClientOriginalName();
+                $file->move($this->container->getParameter('path_image_produit'),$fileName);
+                $Produit->setImage($fileName);
+            }
+
+
+            $em->persist($Produit);
+            $em->flush();
+            return $this->redirectToRoute('produits_listeProduit');
+
+
+        }
+        return $this->render('ProduitsBundle:Default:modifierproduit.html.twig',array("fournisseurs"=>$fournisseurs,"produit"=>$Produit));
+
+
+    }
+
+    public function  detailsproduitAction(Produit $produit){
+
+        return $this->render('ProduitsBundle:Default:detailsproduit.html.twig', array("produit"=>$produit));
+
+
+    }
+
+    public function  supprimerproduitAction(Produit $produit){
+        $em= $this->getDoctrine()->getManager();
+            $em->remove($produit);
+            $em->flush();
+            return $this->redirectToRoute('produits_listeProduit');
 
     }
 }

@@ -1,0 +1,48 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Numero</th>
+<th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Numero</th>
+<th></th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in fournisseurs %}
+                        <tr>
+                            <td>{{  i.id }}</td>
+                            <td>{{  i.nom }}</td>
+                            <td>{{  i.numero }}</td>
+                            <td><button class="btn-success">Modifier</button></td>
+                            <td><button class="btn-danger">Supprimer</button></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+{% endblock %}

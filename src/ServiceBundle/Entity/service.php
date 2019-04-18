@@ -44,7 +44,6 @@ class service
      * @ORM\JoinColumn(name="idCateg", referencedColumnName="id")
      *  })
      */
-
     private $idCateg;
 
     /**

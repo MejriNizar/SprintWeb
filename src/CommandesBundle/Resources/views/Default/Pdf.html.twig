@@ -1,0 +1,39 @@
+<script>
+    $(document).ready(function () {
+        var panier = $('#detailcmd').DataTable({
+            "paging": true,
+            "stateSave": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.13/i18n/French.json",
+            }
+        });
+    });
+</script>
+<h1 align="center">{{title}}</h1>
+<center>
+<table id="detailcmd" border="2" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+
+        <th>Totale</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    <tbody>
+    {% for a in commandes %}
+
+        <tr>
+
+            <center><td>{{ a.total}}  Dt</td></center>
+            <center>   <td>{{ a.date |date("m/d/Y")     }}</td> </center>
+
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+<div>
+    <canvas id="myCanvas" width="300" height="200"/>
+</div>
+<hr>

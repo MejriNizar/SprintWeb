@@ -51,8 +51,7 @@ class RegistrationType extends AbstractType
                     'choices' => array(
                         'Client' => 'ROLE_CLIENT',
 
-
-                        'Prestataire'=>'ROLE_PRESTATAIRE',
+                        'Admin' => 'ROLE_ADMIN',
 
                     ),
                     'data' => 'ROLE_CLIENT'

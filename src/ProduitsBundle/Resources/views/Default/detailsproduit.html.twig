@@ -1,0 +1,74 @@
+
+{%extends 'base.html.twig'  %}
+ {% block body %}
+
+
+
+     <div class="site-section bg-light">
+         <div class="container">
+             <div class="row">
+
+                 <div class="col-md-5">
+
+                     <img src="{{asset('ressources/images/produit/'~produit.image )}}"  alt="Image" class="img-fluid" width="500" height="500">
+
+
+                 </div>
+                 <div class="col-md-7 mb-5">
+
+
+
+                     <form action="#" class="p-5 bg-white">
+
+
+                         <div class="row form-group">
+                             <div class="col-md-6 mb-3 mb-md-0">
+                                 <label class="text-black" for="fname">Nom du produit:</label>
+<p >{{ produit.nom }}</p>
+                             </div>
+                             <div class="col-md-6">
+                                 <label class="text-black" for="lname">Reference:</label>
+                                 <p>{{ produit.reference}}</p>
+                             </div>
+                         </div>
+
+                         <div class="row form-group">
+
+                             <div class="col-md-12">
+                                 <label class="text-black" for="email">Quantite:</label>
+                                 <p>{{ produit.quantite }} en stock</p>
+                             </div>
+                         </div>
+
+                         <div class="row form-group">
+
+                             <div class="col-md-12">
+                                 <label class="text-black" for="subject">Prix unitaire:</label>
+                                 <p>{{ produit.prix }} dt</p>
+                             </div>
+                         </div>
+
+                         <div class="row form-group">
+                             <div class="col-md-12">
+                                 <label class="text-black" for="message">Description</label>
+                                 <p>{{ produit.description}}</p>
+                             </div>
+                         </div>
+
+                         <div class="addtocart">
+
+                                 <a  class="btn fa-add" href="{{ path("addProduitPanier",{idProduit:produit.idProduit}) }}" >
+                                     <span class="glyph fa-edit icon-edit"   ></span>
+                                     {% trans %} Ajouter Au Panier {% endtrans %}
+                                 </a>
+
+                         </div>
+
+
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+ {% endblock %}

@@ -1,3 +1,7 @@
+commandes_commande:
+    resource: "@CommandesBundle/Controller/CommandeController.php"
+    type:     annotation
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /

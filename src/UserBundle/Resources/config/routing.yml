@@ -1,15 +1,24 @@
 user_homepage:
     path:     /
     defaults: { _controller: UserBundle:Default:index }
-
-client_homepage:
-    path:     /client
-    defaults: { _controller: UserBundle:Default:client }
-
-admin_homepage:
-    path:     /admin
-    defaults: { _controller: UserBundle:Default:admin }
-
-prestataire_homepage:
-    path:     /prestataire
-    defaults: { _controller: UserBundle:Default:pres }
+admin_home:
+    path: /admin/home
+    defaults: {_controller: UserBundle:Security:redirect}
+voyageur_home:
+    path: /voyageur/home
+    defaults: {_controller: UserBundle:Security:redirectvoyageur}
+guide_home:
+    path: /guide/home
+    defaults: {_controller: UserBundle:Security:redirectguide}
+famille_home:
+    path: /famille/home
+    defaults: {_controller: UserBundle:Security:redirectfamille}
+organisateur_home:
+    path: /organisateur/home
+    defaults: {_controller: UserBundle:Security:redirectorganisateur}
+type_agence:
+    path: /Voyageur/agence
+    defaults: {_controller: UserBundle:User:indexAgenceAction}
+type_club:
+    path: /Voyageur/club
+    defaults: {_controller: UserBundle:User:indexClubAction}

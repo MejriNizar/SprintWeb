@@ -9,3 +9,28 @@ produits_listeProduit:
 produits_ajoutproduit:
     path:     /ajoutproduit
     defaults: { _controller: ProduitsBundle:Produits:ajoutproduit }
+
+produits_consulterproduit:
+    path:     /consulterproduit
+    defaults: { _controller: ProduitsBundle:Produits:consulterproduit }
+
+produits_listeFournisseur:
+    path:     /listefournisseur
+    defaults: { _controller: ProduitsBundle:Produits:listeFournisseur }
+
+produits_ajoutfournisseur:
+    path:     /ajoutfournisseur
+    defaults: { _controller: ProduitsBundle:Produits:ajoutfournisseur }
+
+produits_supprimerproduit:
+    path:     /supprimerproduit/{idProduit}
+    defaults: { _controller: ProduitsBundle:Produits:supprimerproduit }
+
+produits_modifierproduit:
+    path:     /modifierproduit/{idProduit}
+    defaults: { _controller: ProduitsBundle:Produits:modifierproduit }
+
+
+produits_detailsproduit:
+    path:     /detailsproduit/{idProduit}
+    defaults: { _controller: ProduitsBundle:Produits:detailsproduit }

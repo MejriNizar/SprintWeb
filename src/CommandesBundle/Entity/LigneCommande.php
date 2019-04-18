@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * LigneCommande
  *
  * @ORM\Table(name="ligne_commande")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CommandesBundle\Repository\ligneCommandeRepository")
  */
 class LigneCommande
 {
@@ -17,7 +17,7 @@ class LigneCommande
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
@@ -27,13 +27,41 @@ class LigneCommande
      */
 
     private $idCommande;
+    /**
+     * @var \AppBundle\Entity\FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_produit", type="integer")
+     * @return \AppBundle\Entity\FosUser
      */
-    private $idProduit;
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param \AppBundle\Entity\FosUser $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+
+    /**
+     * @var \ProduitsBundle\Entity\Produit
+     *
+     * @ORM\ManyToOne(targetEntity="ProduitsBundle\Entity\Produit")
+     * @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
+     *
+     */
+    private $produit;
 
     /**
      * @var integer
@@ -58,24 +86,26 @@ class LigneCommande
         $this->idCommande = $idCommande;
     }
 
-
-
-
     /**
-     * @return int
+     * @return \ProduitsBundle\Entity\Produit
      */
-    public function getIdProduit()
+    public function getProduit()
     {
-        return $this->idProduit;
+        return $this->produit;
     }
 
     /**
-     * @param int $idProduit
+     * @param \ProduitsBundle\Entity\Produit $produit
      */
-    public function setIdProduit($idProduit)
+    public function setProduit($produit)
     {
-        $this->idProduit = $idProduit;
+        $this->produit = $produit;
     }
+
+
+
+
+
 
     /**
      * @return int

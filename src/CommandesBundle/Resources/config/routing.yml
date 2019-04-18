@@ -3,4 +3,31 @@ commandes_homepage:
     defaults: { _controller: CommandesBundle:Default:index }
 Panier:
     path:     /Panier
-    defaults: { _controller: CommandesBundle:Default:index }
+    defaults: { _controller: CommandesBundle:Commande:consulterPanier}
+
+detailpanier:
+    path:     /detailpanier
+    defaults: { _controller: CommandesBundle:Commande:detailpanier }
+
+addProduitPanier:
+    path:     /addProduitPanier/{idProduit}
+    defaults: { _controller:CommandesBundle:Commande:addProduitPanier }
+
+addCommande:
+    path:     /addCommande
+    defaults: { _controller: CommandesBundle:Commande:addCommande }
+
+indexCommande:
+    path:     /commandes
+    defaults: { _controller: CommandesBundle:Commande:indexCommande }
+
+proceedToPayment:
+    path:     /proceed/{idCommande}
+    defaults: { _controller:CommandesBundle:Commande:proceedToPayment }
+payment:
+    path:     /charge
+    defaults: { _controller:CommandesBundle:Commande:Payment }
+
+Pdf:
+    path:     /pdf
+    defaults: { _controller:CommandesBundle:Commande:Pdf }
