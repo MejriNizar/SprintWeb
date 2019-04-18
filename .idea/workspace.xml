@@ -2,121 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="875f8912-c0cf-4b06-915c-3782b698a62f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/CommandesBundle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Controller/CommandeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Controller/DefaultController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Entity/Commande.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Entity/Facture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Entity/LigneCommande.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Entity/ProduitPanier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Form/CommandeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Repository/ProduitPanierRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Repository/ligneCommandeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/config/routing.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/config/services.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/Default/Pdf.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/Default/detail_commande.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/Default/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/Default/payment.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/commande/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/commande/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/commande/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Resources/views/commande/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/CommandesBundle/Tests/Controller/CommandeControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/._Controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/._Entity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/._Resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/Controller/._DefaultController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/Resources/._config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/Resources/._views" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixitF/src/ProduitsBundle/Resources/views/._Default" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/deleted.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/search.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/sent.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Controller/CommandeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Entity/ProduitPanier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Form/CommandeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Repository/ProduitPanierRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Repository/ligneCommandeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CommandesBundle/Resources/views/Default/detail_commande.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/ListeDemandes.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/ListeOffres.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/Offres.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/modifierDemande.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/ajoutfournisseur.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/consulter_produits.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/liste_fournisseurs.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Controller/CategorieController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Form/categorieType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Form/serviceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Repository/categorieRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Resources/views/Default/afficher.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServiceBundle/Resources/views/Default/categories.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Message.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserBundle/Entity/MessageMetadata.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Thread.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserBundle/Entity/ThreadMetadata.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/template/scripts/M.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FixitF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FixitF.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FixitF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FixitF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/baseBack.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Photos/6f96d6b39a145f0c10a6b8596d1bc1ea.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Photos/8db2cab608daac1264c3984c1ccfd169.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Photos/94862d8761f5c33dba84425ed1720d64.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Photos/d7f7fd38676b0800cea0efd1b639d8f5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/FosUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/FosUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandesBundle/Entity/Facture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandesBundle/Entity/Facture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandesBundle/Entity/LigneCommande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandesBundle/Entity/LigneCommande.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandesBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandesBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Demande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Demande.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Form/DemandeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Form/DemandeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Form/OffreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Form/OffreType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Repository/OffreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Repository/OffreRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/Ajouter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/Ajouter.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/AllOffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/AllOffre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/affichage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/affichage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/affichageDemande.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/affichageDemande.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/ajout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/ajout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/indexx.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/indexx.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/modifier.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/modifier.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Controller/ProduitsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Controller/ProduitsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Entity/Fournisseur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Entity/Fournisseur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Entity/Produit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/ajoutproduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/ajoutproduit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/liste_produits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/liste_produits.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/produit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduitsBundle/Resources/views/Default/produit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServiceBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServiceBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServiceBundle/Entity/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServiceBundle/Entity/categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServiceBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServiceBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Form/RegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Form/RegistrationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/Client_home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/Client_home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/Prestataire_home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/Prestataire_home.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,9 +47,9 @@
         <counts>
           <entry key="js" value="63" />
           <entry key="json" value="5" />
-          <entry key="php" value="2697" />
+          <entry key="php" value="2723" />
           <entry key="twig" value="3578" />
-          <entry key="txt" value="1165" />
+          <entry key="txt" value="1186" />
           <entry key="yml" value="1061" />
         </counts>
       </usages-collector>
@@ -171,8 +57,8 @@
         <counts>
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="65" />
-          <entry key="PHP" value="2697" />
-          <entry key="PLAIN_TEXT" value="1166" />
+          <entry key="PHP" value="2723" />
+          <entry key="PLAIN_TEXT" value="1187" />
           <entry key="SQL" value="4" />
           <entry key="Twig" value="3571" />
           <entry key="YAML" value="1061" />
@@ -184,9 +70,9 @@
           <entry key="css" value="8" />
           <entry key="html" value="1" />
           <entry key="js" value="7" />
-          <entry key="json" value="2" />
+          <entry key="json" value="3" />
           <entry key="md" value="1" />
-          <entry key="php" value="112" />
+          <entry key="php" value="113" />
           <entry key="png" value="2" />
           <entry key="twig" value="203" />
           <entry key="xml" value="1" />
@@ -198,10 +84,10 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="2" />
+          <entry key="JSON" value="3" />
           <entry key="JavaScript" value="7" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="112" />
+          <entry key="PHP" value="113" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Twig" value="201" />
           <entry key="XML" value="1" />
@@ -217,11 +103,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CommandesBundle/Controller/CommandeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+              <folding>
+                <element signature="e#7#66#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -301,6 +199,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -339,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/AllOffre.html.twig" />
         <option value="$PROJECT_DIR$/web/template/scripts/M.js" />
         <option value="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/views/Default/Ajouter.html.twig" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Offre.php" />
         <option value="$PROJECT_DIR$/src/DemandeOffreBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
@@ -355,6 +255,7 @@
         <option value="$PROJECT_DIR$/src/DemandeOffreBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/CommandesBundle/Controller/CommandeController.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
       </list>
     </option>
   </component>
@@ -412,13 +313,19 @@
       <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/json-builder" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/ckeditor-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-320" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="100" />
     <option name="y" value="5" />
-    <option name="width" value="1070" />
-    <option name="height" value="1050" />
+    <option name="width" value="1680" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -456,7 +363,7 @@
             <path>
               <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -479,30 +386,7 @@
             <path>
               <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CommandesBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Entity" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CommandesBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Form" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CommandesBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Repository" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="FixitF" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="CommandesBundle" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="vendor" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -724,7 +608,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116510000" />
+    <option name="totallyTimeSpent" value="117442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -736,8 +620,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -753,8 +636,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4986577" weight="0.32765958" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033557" side_tool="true" visible="true" weight="0.33617023" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="12" sideWeight="0.4966443" visible="true" weight="0.33617023" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5033557" side_tool="true" weight="0.33617023" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="12" sideWeight="0.4966443" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -801,13 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -873,13 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1060,10 +929,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CommandesBundle/Controller/CommandeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding>
+            <element signature="e#7#66#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -25,13 +25,11 @@ class AppKernel extends Kernel
             new CommandesBundle\CommandesBundle(),
             new ServiceApVenteBundle\ServiceApVenteBundle(),
             new UserBundle\UserBundle(),
-<<<<<<< HEAD
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-=======
             new FOS\MessageBundle\FOSMessageBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
->>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
