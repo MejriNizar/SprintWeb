@@ -3,9 +3,11 @@
 namespace DemandeOffreBundle\Form;
 
 use DemandeOffreBundle\Entity\Demande;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class DemandeType extends AbstractType
 {
@@ -22,7 +24,8 @@ class DemandeType extends AbstractType
                 'days' => range(date('d'), 31),
             ))
 
-            ->add('description');
+        ->add('description');
+
 
     }/**
      * {@inheritdoc}

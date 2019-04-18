@@ -10,7 +10,7 @@
                             <a href="{{ path('Afficher_All_offre') }}">Liste Offres</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ path('Afficher_All_offre') }}">Mes Demandes</a>
+                            <a href="{{ path('affichage_la_liste_d_demande') }}">Mes Demandes</a>
                         </li>
 
 
@@ -22,180 +22,51 @@
                     <h6 align="center" size="">Liste Des Offres</h6>
                 </li>
 
-                {% for off in offres | reverse %}
-                    <div class="site-section lightbox">
-                    <div class="container">
-                        <div class="row ">
-                            <div class="col-md-6 col-lg-4 mb-4">
-                                <a href="{{ path('Ajouter_demande',{'id':off.id}) }}" class="unit-1 text-center">
-                                    <img src="http://localhost/FixitF/public/uploads/Photos/{{off.photo}}" href="" alt="Image" class="img-fluid" height="1000" width="1000">
-                                    <div class="unit-1-text">
-                                        <h3 class="unit-1-heading"><label>Budget:</label><span>{{ off.budget }}</span></h3>
-                                        <h3 class="unit-1-heading"><label>Titre:</label><span>{{ off.titre }}</span></h3>
-                                        <h3 class="unit-1-heading"><label>description:</label><span>{{ off.description }}</span></h3>
-                                        <h3 class="unit-1-heading"><label>Service:</label> {{ off.service.nom }}</h3>
 
-                                    </div>
-                                </a>
-                                <br>
-
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Voulez-vous vraiment supprimer cette offre?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Non</button>
-                                    <a href="{{ path('supprimer_une_offre',{'id':off.id}) }}" class="btn btn-danger" >Oui</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                {% endfor %}
-
-                <!-- //js -->
-                <!-- smooth dropdown -->
-                <script>
-                    $(document).ready(function () {
-                        $('ul li.dropdown').hover(function () {
-                            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-                        }, function () {
-                            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-                        });
-                    });
-                </script>
-                <!-- //smooth dropdown -->
-                <!-- script for password match -->
-                <script>
-                    window.onload = function () {
-                        document.getElementById("password1").onchange = validatePassword;
-                        document.getElementById("password2").onchange = validatePassword;
-                    }
-
-                    function validatePassword() {
-                        var pass2 = document.getElementById("password2").value;
-                        var pass1 = document.getElementById("password1").value;
-                        if (pass1 != pass2)
-                            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-                        else
-                            document.getElementById("password2").setCustomValidity('');
-                        //empty string means no validation error
-                    }
-                </script>
-                <!-- script for password match -->
-
-                <!--quantity-->
-                <script>
-                    $('.value-plus').on('click', function () {
-                        var divUpd = $(this).parent().find('.value'),
-                            newVal = parseInt(divUpd.text(), 10) + 1;
-                        divUpd.text(newVal);
-                    });
-
-                    $('.value-minus').on('click', function () {
-                        var divUpd = $(this).parent().find('.value'),
-                            newVal = parseInt(divUpd.text(), 10) - 1;
-                        if (newVal >= 1) divUpd.text(newVal);
-                    });
-                </script>
-                <!--quantity-->
-                <!-- FadeOut-Script -->
-                <script>
-                    $(document).ready(function (c) {
-                        $('.close1').on('click', function (c) {
-                            $('.rem1').fadeOut('slow', function (c) {
-                                $('.rem1').remove();
-                            });
-                        });
-                    });
-                </script>
-                <script>
-                    $(document).ready(function (c) {
-                        $('.close2').on('click', function (c) {
-                            $('.rem2').fadeOut('slow', function (c) {
-                                $('.rem2').remove();
-                            });
-                        });
-                    });
-                </script>
-                <script>
-                    $(document).ready(function (c) {
-                        $('.close3').on('click', function (c) {
-                            $('.rem3').fadeOut('slow', function (c) {
-                                $('.rem3').remove();
-                            });
-                        });
-                    });
-                </script>
-                <!--// FadeOut-Script -->
-
-                <!-- start-smooth-scrolling -->
-                <script src="{{ asset('description/js/move-top.js') }}"></script>
-                <script src="{{ asset('description/js/easing.js') }}"></script>
-                <script>
-                    jQuery(document).ready(function ($) {
-                        $(".scroll").click(function (event) {
-                            event.preventDefault();
-
-                            $('html,body').animate({
-                                scrollTop: $(this.hash).offset().top
-                            }, 1000);
-                        });
-                    });
-                </script>
-                <!-- //end-smooth-scrolling -->
-                <!-- smooth-scrolling-of-move-up -->
-                <script>
-                    $(document).ready(function () {
-                        /*
-                        var defaults = {
-                            containerID: 'toTop', // fading element id
-                            containerHoverID: 'toTopHover', // fading element hover id
-                            scrollSpeed: 1200,
-                            easingType: 'linear'
-                        };
-                        */
-
-                        $().UItoTop({
-                            easingType: 'easeOutQuart'
-                        });
-
-                    });
-                </script>
-                <script src="{{ asset('description/js/SmoothScroll.min.js') }}"></script>
-                <!-- //smooth-scrolling-of-move-up -->
-                <!-- Bootstrap core JavaScript
-                ================================================== -->
-                <!-- Placed at the end of the document so the pages load faster -->
-                <script src="{{ asset('description/s/bootstrap.js') }}"></script>
 
                 </div>
 
+                <div class="site-section" size="1">
+
+                    <div id="offre" class="container">
+                        <div class="row">
+                            {% for o in offres %}
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <a href="{{ path('details_offreClient', {'id': o.id }) }}" class="unit-1 text-center">
+                                        <img src="{{asset('ressources/images/Offre/'~o.photo )}}"   alt="Image"  width="300" height="300">
+                                        <div class="unit-1-text">
+                                            <h4 >{{ o.titre }}</h4>
+
+                                        </div>
+                                    </a>
+                                    <div class="btn btn-black">
+                                        <a class="btn fa-remove" href="{{ path('Ajouter_demande',{'id':o.id}) }}" >
+                                            <span class="glyph fa-edit  " ></span>
+                                            {% trans %} Demander {% endtrans %}
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
             {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% block javascripts %}
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-migrate-3.0.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-ui.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/popper.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.stellar.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.countdown.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/aos.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/main.js')}}"></script>
+    <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
+{% endblock %}

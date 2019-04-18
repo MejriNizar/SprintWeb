@@ -62,14 +62,33 @@
                          </div>
                      </div>
 
-
-
                      <div class="row form-group">
-                         <div class="col-md-12">
-                             <input type="submit" value="Modifier" class="btn btn-primary py-2 px-4 text-white">
-                         </div>
-
+                         <a class="btn btn-primary py-2 px-4 text-white" data-toggle="modal" data-target="#myModal">
+                             <span class="glyph fa-remove " ></span>
+                             {% trans %} Modifier {% endtrans %}
+                         </a>
                      </div>
+                     <div class="modal fade" id="myModal" role="dialog">
+                         <div class="modal-dialog">
+
+                             <!-- Modal content-->
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal">&times</button>
+                                 </div>
+                                 <div class="modal-body">
+                                     <p>Voulez-vous vraiment modifier cette offre?</p>
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Non</button>
+                                     <button type="submit   "  class="btn btn-primary" value="Modifier"  >Oui</button>
+                                 </div>
+                             </div>
+
+                         </div>
+                     </div>
+
+
 
                      {{ form_end(form) }}
 

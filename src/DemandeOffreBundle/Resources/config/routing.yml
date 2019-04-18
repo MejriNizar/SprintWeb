@@ -13,13 +13,19 @@ Demande:
     path:     /GestionDO/Demande
     defaults: { _controller: DemandeOffreBundle:Default:index }
 
+searchajax:
+    path:     /json/{title}
+    defaults: { _controller: DemandeOffreBundle:Default:searchAjax }
+
+
+
 
 affichage_la_liste_d_offre:
     path:     /prestataire/home/affichage
     defaults: { _controller: DemandeOffreBundle:Default:affichage }
 
 affichage_la_liste_d_demande:
-    path:     /client/home/affichageDemande
+    path:     /client/affichageDemande
     defaults: { _controller: DemandeOffreBundle:Default:affichageDemande }
 
 ajout_offre:
@@ -43,32 +49,24 @@ Ajouter_demande:
     defaults: { _controller: DemandeOffreBundle:Default:ajouterDemande }
 
 
+details_offre:
+    path: /prestataire/home/affichage/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:detailsOffre }
+
+details_offreClient:
+    path: /client/home/detailsoffre/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:detailsOffreClient }
+
+
+offre_listeoffre:
+    path: /admin/listeoffre
+    defaults: { _controller: DemandeOffreBundle:Default:afficherListeOffre }
+
+demande_listedemande:
+    path: /admin/listedemande
+    defaults: { _controller: DemandeOffreBundle:Default:afficherListeDemande }
 
 
 
 
 
-
-
-
-
-
-Batiment:
-    path:     /Batiment
-    defaults: { _controller: DemandeOffreBundle:Default:index }
-
-Industries:
-    path:     /Indus
-    defaults: { _controller: DemandeOffreBundle:Default:index }
-
-Demenagemnt:
-    path:     /Dememangement
-    defaults: { _controller: DemandeOffreBundle:Default:index }
-
-SmartHome:
-    path:     /SH
-    defaults: { _controller: DemandeOffreBundle:Default:index }
-
-Coursier:
-    path:     /Cr
-    defaults: { _controller: DemandeOffreBundle:Default:index }

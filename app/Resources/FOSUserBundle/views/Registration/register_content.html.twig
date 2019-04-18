@@ -1,10 +1,27 @@
+
+
 {% trans_default_domain 'FOSUserBundle' %}
 
 
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-{{ form_widget(form) }}
-<div>
-	<input type="submit" value="{{ 'registration.submit'|trans }}" />
+<div class="form-group">
+	<label>{% trans %}Role: {% endtrans %}<i style="color:#B22222;"> </i></label>
+    {{ form_widget(form.roles) }}
+	<label>{% trans %}Nom: {% endtrans %}<i style="color:#B22222;"> </i></label>
+    {{ form_widget(form.username) }}<br>
+	<label>{% trans %}Mail: {% endtrans %}<i style="color:#B22222;"> </i></label>
+    {{ form_widget(form.email) }}<br>
+    <label>{% trans %}Sexe: {% endtrans %}<i style="color:#B22222;"> </i></label>
+    {{ form_widget(form.sexe) }}<br>
+    <label>{% trans %}Adresse: {% endtrans %}<i style="color:#B22222;"> </i></label>
+    {{ form_widget(form.adresse) }}<br>
+
+
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit"  placeholder="Register" >
+    </div>
 </div>
+
 {{ form_end(form) }}

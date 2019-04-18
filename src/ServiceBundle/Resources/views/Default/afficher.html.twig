@@ -1,0 +1,60 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+    <section class="wrapper">
+    <br>
+    <div class="card mb-3">
+        <form class="form-inline" role="form" method="POST" action="{{ path('chercherCategorie')}}">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">Rechercher Categorie par nom</label>
+                <input  class="form-control" id="exampleInputEmail2" name="nom" placeholder="Nom">
+            </div>
+            <button type="submit" class="btn btn-info">Rechercher</button>
+        </form>
+    </div>
+    </section>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+                </tfoot>
+                <tbody>
+                {% for i in categories %}
+                    <tr>
+
+                        <td>{{  i.nom }}</td>
+
+                        <td>{{  i.description }}</td>
+                        <td> {{  i.image }}</td>
+                        <div class="pull-right hidden-phone">
+                            <div class="showback">
+                                <td> <a id="add-without-image" class="btn btn-info" href="{{ path('modifierCategorie',{id:i.id}) }}"> Modifier</a>
+                                    <a id="remove-all" class="btn btn-danger " href="{{ path('supprimerCategorie',{id:i.id}) }}">Supprimer</a></td>
+
+                            </div>
+                        </div>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class=" add-task-row">
+        <a class="btn btn-success btn-sm pull-left" href="{{ path('ajouterCategorie')}}">Ajouter une Categorie</a>
+    </div>
+
+
+{% endblock %}

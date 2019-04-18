@@ -6,7 +6,9 @@
 
 
 
-
+<li class="breadcrumb-item">
+    <h6 align="center" size=""><font size="60px" color="#ff7f50" class="text-center text-ff7f50-opacity-05"><b>Liste Des Demandes</b></font></h6>
+</li>
 
     <div class="site-section bg-light">
         <div class="container">
@@ -22,12 +24,19 @@
                     <div class="unit-4 d-flex">
                         <div class="unit-4-icon mr-4"><span class="text-primary icon-message"></span></div>
                         <div>
+                            <h3>{{ d.offre.titre }}</h3>
                             <h3>{{ d.budget }}</h3>
-                            <p>{{ d.description }}</p>
-                            <p><a href="#">Learn More</a></p>
+                            <h3>{{ d.description }}</h3>
+                            <h3>{{ d.dateCreation|date('d-m-y') }}</h3>
+                            <h3>{{ d.datefin|date('d-m-y') }}</h3>
+
+
+
+
                         </div>
                     </div>
                 </div>
+
             {% endfor %}
             </div>
         </div>

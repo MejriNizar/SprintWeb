@@ -1,0 +1,32 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+    <form method="post" novalidate="novalidate" enctype="multipart/form-data">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="text" id="Nom" name="nom" class="form-control" placeholder="Nom" required="required" autofocus="autofocus">
+                        <label for="Nom">Nom</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        <input type="number" id="Numero" name="numero" class="form-control" placeholder="numero" required="required" autofocus="autofocus">
+                        <label for="Numero">Numero</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block" href="login.html">Ajouter le produit</button>
+    </form>
+
+
+{% endblock %}

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * LigneCommande
  *
  * @ORM\Table(name="ligne_commande")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CommandesBundle\Repository\ligneCommandeRepository")
  */
 class LigneCommande
 {
@@ -17,7 +17,7 @@ class LigneCommande
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
@@ -27,7 +27,31 @@ class LigneCommande
      */
 
     private $idCommande;
+    /**
+     * @var \AppBundle\Entity\FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
+     */
+    private $idUser;
 
+    /**
+     * @return \AppBundle\Entity\FosUser
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param \AppBundle\Entity\FosUser $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
     /**
      * @var integer
      *

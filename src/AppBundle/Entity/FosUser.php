@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
+use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
-class FosUser extends BaseUser
+class FosUser extends BaseUser implements  ParticipantInterface
 {
     /**
      * @var integer
@@ -22,6 +23,11 @@ class FosUser extends BaseUser
      */
     protected $id;
 
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * @var string

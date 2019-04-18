@@ -19,7 +19,7 @@ class OffreType extends AbstractType
             ->add('budget')
             ->add('titre')
             ->add('description')
-
+            # ->add('nbrVue')
             ->add('service',EntityType::class
                 ,array('class'=>'ServiceBundle:service','choice_label'=>'nom','multiple'=>false),
                 array('label' => 'form.offre', 'translation_domain' => 'ServiceBundle'))

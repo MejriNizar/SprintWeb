@@ -87,6 +87,31 @@ class Produit
     private $fournisseur_id;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="datecreation", type="datetime", nullable=false)
+     *
+     */
+    private $datecreation;
+
+    /**
+     * @return int
+     */
+    public function getDatecreation()
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param int $datecreation
+     */
+    public function setDatecreation($datecreation)
+    {
+        $this->datecreation = $datecreation;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getFournisseurId()

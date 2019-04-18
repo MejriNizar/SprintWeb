@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Offre
  *
  * @ORM\Table(name="offre")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DemandeOffreBundle\Repository\OffreRepository")
  */
 class Offre
 {
@@ -52,12 +52,13 @@ class Offre
     /**
      * @var \Demande
      *
-     * @ORM\ManyToOne(targetEntity="Demande")
+     * @ORM\ManyToOne(targetEntity="Demande"  )
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="demande_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="demande_id", referencedColumnName="id" , onDelete="CASCADE"  )
      * })
      */
     private $demande;
+
 
     /**
      * @var \ServiceBundle\Entity\service

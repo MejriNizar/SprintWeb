@@ -31,7 +31,7 @@ class Demande
      *
      * @ORM\ManyToOne(targetEntity="Offre")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id" , onDelete="CASCADE")
      * })
      */
     private $offre;
@@ -78,9 +78,9 @@ class Demande
     /**
      * @var \AppBundle\Entity\FosUser
      *
-     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\FosUser")
+     * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\FosUser" )
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id" )
      * })
      */
     private $idUser;
@@ -90,7 +90,7 @@ class Demande
      *
      * @ORM\ManyToOne(targetEntity="Offre")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="offre_id", referencedColumnName="id" , onDelete="CASCADE")
      * })
      */
     private $idoffre;

@@ -30,11 +30,11 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
-    <label for="username">{{ 'username'|trans }}</label>
+    <label for="username">{{ 'username'|trans }}</label><br>
     <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
 <br>
 
-    <label for="password">{{ 'password'|trans }}</label>
+    <label for="password">{{ 'password'|trans }}</label><br>
     <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /><br>
 
     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />

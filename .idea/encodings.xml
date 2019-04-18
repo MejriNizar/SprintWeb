@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Resources/FOSUserBundle" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Demande.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/DemandeOffreBundle/Entity/Offre.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Entity/Message.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Entity/MessageMetadata.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Entity/Thread.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/UserBundle/Entity/ThreadMetadata.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/UserBundle/Form" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/UserBundle/Resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vendor/egeloen" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/Bundles/sceditor-2.1.3" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />
   </component>
 </project>

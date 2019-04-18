@@ -7,7 +7,10 @@ use DemandeOffreBundle\Entity\Offre;
 use DemandeOffreBundle\Form\DemandeType;
 use DemandeOffreBundle\Form\OffreType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class DefaultController extends Controller
 {
@@ -17,13 +20,23 @@ class DefaultController extends Controller
 
 
     }
-    public function AffichageAction()
+    public function AffichageAction( Request $request)
     {
 
         $user=$this->getUser();
 
         $offres=$this->getDoctrine()->getRepository(Offre::class)->findByIdUser(array('user'=>$user->getId()));
-        return $this->render('@DemandeOffre/Default/affichage.html.twig',array('offres'=>$offres));
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator = $this->get('knp_paginator');
+        $res= $paginator->paginate(
+            $offres,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 3)
+
+        );
+        return $this->render('@DemandeOffre/Default/affichage.html.twig',array('offres'=>$res));
     }
     public function ajoutAction(Request $request)
     {
@@ -42,7 +55,7 @@ class DefaultController extends Controller
 
             try {
                 $file->move(
-                    $this->getParameter('annonce_directory'),
+                    $this->getParameter('offres_directory'),
                     $fileName
                 );
             } catch (FileException $e) {
@@ -75,12 +88,25 @@ class DefaultController extends Controller
     }
     public function supprimerAction($id)
     {
+
         $em = $this->getDoctrine()->getEntityManager();
-        $offres = $em->getRepository(Offre::class)->findOneById($id);
+
+        $offres = $em->getRepository(Offre::class)->find($id);
         $em->remove($offres);
+
+
+
         $em->flush();
         return $this->redirectToRoute("affichage_la_liste_d_offre");
     }
+  /*  public function supprimerAction($id)
+    {
+        $em= $this->getDoctrine()->getManager();
+
+        $em->getRepository("DemandeOffreBundle:Offre")->delete($id);
+
+        return $this->redirectToRoute("affichage_la_liste_d_offre");
+    }*/
     public function modifierAction(Request $request,$id)
     {
 
@@ -95,7 +121,7 @@ class DefaultController extends Controller
 
             try {
                 $file->move(
-                    $this->getParameter('annonce_directory'),
+                    $this->getParameter('offres_directory'),
                     $fileName
                 );
             } catch (FileException $e) {
@@ -133,6 +159,16 @@ class DefaultController extends Controller
         return $this->render('@DemandeOffre/Default/AllOffre.html.twig',array('offres'=>$offres));
 
     }
+    public function afficherListeOffreAction(){
+        $offres=$this->getDoctrine()->getRepository(Offre::class)->findAll();
+        return $this->render('@DemandeOffre/Default/ListeOffres.html.twig',array('offres'=>$offres));
+
+    }
+    public function afficherListeDemandeAction(){
+        $demandes=$this->getDoctrine()->getRepository(Demande::class)->findAll();
+        return $this->render('@DemandeOffre/Default/ListeDemandes.html.twig',array('demande'=>$demandes));
+
+    }
 
     public function ajouterDemandeAction(Request $request,$id){
         $repositoryCat = $this->getDoctrine()->getRepository(Offre::class);
@@ -157,7 +193,7 @@ class DefaultController extends Controller
         }
         return $this->render('@DemandeOffre/Default/Ajouter.html.twig',
             array(
-                'form'=>$form->createView(),'id'=>$id,'annonce'=>$offres
+                'form'=>$form->createView(),'id'=>$id,'offres'=>$offres
             ));
 
     }
@@ -168,5 +204,41 @@ class DefaultController extends Controller
 
         $Demande=$this->getDoctrine()->getRepository(Demande::class)->findByIdUser(array('user'=>$user->getId()));
         return $this->render('@DemandeOffre/Default/affichageDemande.html.twig',array('demandes'=>$Demande));
+    }
+    public function  detailsOffreAction(Offre $offre){
+
+        return $this->render('DemandeOffreBundle:Default:DetailsOffre.html.twig', array("offres"=>$offre));
+
+
+    }
+    public function  detailsOffreClientAction(Offre $offre){
+
+        return $this->render('DemandeOffreBundle:Default:DetailsOffreClient.html.twig', array("offres"=>$offre));
+
+
+    }
+
+    public function searchAjaxAction($title)
+
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $article = $em->getRepository("DemandeOffreBundle:Offre")->FindByLetters($title);
+        return $this->render("DemandeOffreBundle:Default:Offres.html.twig",
+            array('offres' => $article,
+            ));
+
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(2);
+
+
+        $normalizer->setCircularReferenceHandler(function ($article) {
+            return $article->getId();
+        });
+        $s = new Serializer(array($normalizer));
+        $articles = $s->normalize($article,'json');
+        $response = new JsonResponse();
+        return $response->setData(array('offres'=>$articles));
     }
 }

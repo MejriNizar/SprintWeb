@@ -1,0 +1,58 @@
+
+{%extends 'base.html.twig'  %}
+ {% block body %}
+
+
+
+
+     <div class="site-section bg-light">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-7 mb-5">
+
+                     <li class="breadcrumb-item">
+                         <h6 align="center" size="">Liste Des demandes</h6>
+                     </li>
+
+
+
+                     <br><br>
+                     {{ form_start(form) }}
+
+                     <div class="row form-group">
+                         <div class="col-md-6 mb-3 mb-md-0">
+                             <label class="text-black" for="fname">{% trans %}Budget:{% endtrans %}</label>
+                             {{ form_widget(form.budget, {'attr': {'class': 'form-control','placeholder':'budget', 'style':'height:80%'} }) }}</br>
+                         </div>
+                         <div class="col-md-6">
+                             <label class="text-black" for="lname">{% trans %}description:{% endtrans %}</label>
+                             {{ form_widget(form.description, {'attr': {'class': 'form-control','placeholder':'titre', 'style':'height:80%'} }) }}</br>
+                         </div>
+                     </div>
+
+                     <div class="row form-group">
+
+                         <div class="col-md-12">
+                             <label class="text-black" for="fname">{% trans %}DateFin:{% endtrans %}</label>
+                             <div class="date">{{ form_widget(form.dateFin) }}</div> </br>
+                         </div>
+                     </div>
+
+
+
+                     <div class="row form-group">
+                         <div class="col-md-12">
+                             <input type="submit" value="Modifier Demande" class="btn btn-primary py-2 px-4 text-white">
+                         </div>
+
+                     </div>
+
+                     {{ form_end(form) }}
+
+                 </div>
+
+             </div>
+         </div>
+     </div>
+
+ {% endblock %}

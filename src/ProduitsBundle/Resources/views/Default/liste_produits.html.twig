@@ -1,6 +1,12 @@
 {% extends 'baseBack.html.twig' %}
 {% block content %}
+    <script type="text/javascript">
 
+        function viewImage(imgsrc) {
+            document.getElementById("image").src = "{{ asset('ressources/images/produit/') }}"+imgsrc;
+
+        }
+    </script>
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
@@ -45,7 +51,8 @@
                         <td>{{  i.categorie }}</td>
                         <td>{{  i.quantite }}</td>
                         <td>{{  i.prix}}</td>
-                        <td>{{  i.image}}</td>
+                        <td><button onclick="viewImage('{{ i.image }}');"   data-toggle="modal" data-target="#imageModal">View Image</button> </td>
+
                         <td>{{  i.description }}</td>
                         <td>{{  i.fournisseurId.nom }}</td>
                         <td>{{  i.etoile }}</td>
@@ -55,5 +62,17 @@
                 </table>
             </div>
         </div>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div><img id="image" width="500" height="500"></div>
+
+                </div>
+            </div>
+        </div>
+
+
 
 {% endblock %}

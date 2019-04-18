@@ -3,4 +3,14 @@ commandes_homepage:
     defaults: { _controller: CommandesBundle:Default:index }
 Panier:
     path:     /Panier
-    defaults: { _controller: CommandesBundle:Default:index }
+    defaults: { _controller: CommandesBundle:Commande:consulterPanier}
+
+detailpanier:
+    path:     /detailpanier
+    defaults: { _controller: CommandesBundle:Commande:detailpanier }
+
+addProduitPanier:
+    path:     /addProduitPanier/{idProduit}
+    defaults: { _controller:CommandesBundle:Commande:addProduitPanier }
+
+

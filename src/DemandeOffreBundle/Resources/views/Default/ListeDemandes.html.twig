@@ -1,0 +1,74 @@
+{% extends 'baseBack.html.twig' %}
+{% block content %}
+    <script type="text/javascript">
+
+        function viewImage(imgsrc) {
+            document.getElementById("image").src = "{{ asset('ressources/images/offre/') }}"+imgsrc;
+
+        }
+    </script>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Utilisateur</th>
+
+                        <th>Budget</th>
+                        <th>Description</th>
+                        <th>Date Creation</th>
+                        <th>Date Fin</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Utilisateur</th>
+
+
+                        <th>Budget</th>
+                        <th>Description</th>
+                        <th>Date Creation</th>
+                        <th>Date Fin</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in demande %}
+                        <tr>
+                            <td>{{  i.id }}</td>
+                            <td>{{ i.iduser.username }}</td>
+
+
+
+                            <td>{{  i.budget }}</td>
+                            <td>{{  i.description}}</td>
+                            <td>{{  i.dateCreation|date('d-m-y') }}</td>
+                            <td>{{  i.datefin |date('d-m-y')  }}</td>
+
+
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div><img id="image" width="500" height="500"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}
