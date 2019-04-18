@@ -240,7 +240,7 @@
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="100" />
     <option name="y" value="5" />
     <option name="width" value="1680" />
@@ -344,7 +344,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="base.html.twig" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/FixitF/app/Resources/views/base.html.twig">
+    <configuration name="base.html.twig" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/FixitF/app/Resources/views/base.html.twig">
       <method v="2" />
     </configuration>
     <recent_temporary>
