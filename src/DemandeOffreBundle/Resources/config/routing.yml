@@ -13,22 +13,66 @@ Demande:
     path:     GestionDo/Demande
     defaults: { _controller: DemandeOffreBundle:Default:index }
 
+<<<<<<< HEAD
 Batiment:
     path:     /Batiment
     defaults: { _controller: DemandeOffreBundle:Default:index }
+=======
+searchajax:
+    path:     /json/{title}
+    defaults: { _controller: DemandeOffreBundle:Default:searchAjax }
 
-Industries:
-    path:     /Indus
-    defaults: { _controller: DemandeOffreBundle:Default:index }
 
-Demenagemnt:
-    path:     /Dememangement
-    defaults: { _controller: DemandeOffreBundle:Default:index }
 
-SmartHome:
-    path:     /SH
-    defaults: { _controller: DemandeOffreBundle:Default:index }
 
-Coursier:
-    path:     /Cr
-    defaults: { _controller: DemandeOffreBundle:Default:index }
+affichage_la_liste_d_offre:
+    path:     /prestataire/home/affichage
+    defaults: { _controller: DemandeOffreBundle:Default:affichage }
+
+affichage_la_liste_d_demande:
+    path:     /client/affichageDemande
+    defaults: { _controller: DemandeOffreBundle:Default:affichageDemande }
+
+ajout_offre:
+    path:     /prestataire/home/ajout
+    defaults: { _controller: DemandeOffreBundle:Default:ajout }
+
+modifier_une_offre:
+    path:     /prestataire/home/modifier/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:modifier }
+
+supprimer_une_offre:
+    path:     /prestataire/home/supprimer/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:supprimer }
+
+Afficher_All_offre:
+    path:   /client/home/offre
+    defaults: { _controller: DemandeOffreBundle:Default:afficherAllOffre }
+
+Ajouter_demande:
+    path: /client/home/demande/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:ajouterDemande }
+
+
+details_offre:
+    path: /prestataire/home/affichage/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:detailsOffre }
+
+details_offreClient:
+    path: /client/home/detailsoffre/{id}
+    defaults: { _controller: DemandeOffreBundle:Default:detailsOffreClient }
+
+
+offre_listeoffre:
+    path: /admin/listeoffre
+    defaults: { _controller: DemandeOffreBundle:Default:afficherListeOffre }
+
+demande_listedemande:
+    path: /admin/listedemande
+    defaults: { _controller: DemandeOffreBundle:Default:afficherListeDemande }
+
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
+
+
+
+

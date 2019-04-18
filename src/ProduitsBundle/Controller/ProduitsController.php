@@ -66,6 +66,10 @@ class ProduitsController extends Controller
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
     public function listeFournisseurAction(){
         $em= $this->getDoctrine()->getManager();
         $Fournisseurs=$em->getRepository("ProduitsBundle:Fournisseur")->findAll();
@@ -94,6 +98,7 @@ class ProduitsController extends Controller
 
 
     }
+<<<<<<< HEAD
 
     public function modifierproduitAction(Produit $Produit,Request $request)
     {
@@ -140,4 +145,6 @@ class ProduitsController extends Controller
             return $this->redirectToRoute('produits_listeProduit');
 
     }
+=======
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
 }

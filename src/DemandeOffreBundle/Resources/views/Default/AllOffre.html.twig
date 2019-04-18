@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+
+            {% block body %}
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+
+                        <li class="breadcrumb-item">
+                            <a href="{{ path('Afficher_All_offre') }}">Liste Offres</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{{ path('affichage_la_liste_d_demande') }}">Mes Demandes</a>
+                        </li>
+
+
+                    </ol>
+                </nav>
+
+
+                <li class="breadcrumb-item">
+                    <h6 align="center" size="">Liste Des Offres</h6>
+                </li>
+
+
+
+                </div>
+
+                <div class="site-section" size="1">
+
+                    <div id="offre" class="container">
+                        <div class="row">
+                            {% for o in offres %}
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <a href="{{ path('details_offreClient', {'id': o.id }) }}" class="unit-1 text-center">
+                                        <img src="{{asset('ressources/images/Offre/'~o.photo )}}"   alt="Image"  width="300" height="300">
+                                        <div class="unit-1-text">
+                                            <h4 >{{ o.titre }}</h4>
+
+                                        </div>
+                                    </a>
+                                    <div class="btn btn-black">
+                                        <a class="btn fa-remove" href="{{ path('Ajouter_demande',{'id':o.id}) }}" >
+                                            <span class="glyph fa-edit  " ></span>
+                                            {% trans %} Demander {% endtrans %}
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+            {% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-migrate-3.0.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-ui.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/popper.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.stellar.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.countdown.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/aos.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/main.js')}}"></script>
+    <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
+{% endblock %}

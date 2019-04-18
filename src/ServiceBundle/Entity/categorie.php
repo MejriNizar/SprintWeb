@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * categorie
  *
  * @ORM\Table(name="categorie")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ServiceBundle\Repository\categorieRepository")
  */
 class categorie
 {
@@ -40,6 +40,12 @@ class categorie
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image",type="string",nullable=true)
+     */
+    private $image;
 
     /**
      * @return int
@@ -88,5 +94,20 @@ class categorie
     {
         $this->description = $description;
     }
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image=$image;
+    }
+
 
 }

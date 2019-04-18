@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
+    <title>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</title>
+</head>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="btn-group btn-group-justified" >
+        <ul class="navbar-left" style="color: white">{% trans from 'FOSMessageBundle' %}Messenger{% endtrans %}</ul>
+        <ul class="nav-item"><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></ul>
+        <ul class="nav-item"><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></ul>
+        <ul class="nav-item"><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></ul>
+    </div>
+    </nav>
+{% block fos_message_content %}{% endblock %}
+
+
+{% endblock %}

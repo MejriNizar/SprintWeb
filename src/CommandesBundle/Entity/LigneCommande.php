@@ -36,6 +36,7 @@ class LigneCommande
      * })
      */
     private $idUser;
+<<<<<<< HEAD
 
     /**
      * @return \AppBundle\Entity\FosUser
@@ -46,12 +47,25 @@ class LigneCommande
     }
 
     /**
+=======
+
+    /**
+     * @return \AppBundle\Entity\FosUser
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
      * @param \AppBundle\Entity\FosUser $idUser
      */
     public function setIdUser($idUser)
     {
         $this->idUser = $idUser;
     }
+<<<<<<< HEAD
 
 
     /**
@@ -59,6 +73,10 @@ class LigneCommande
      *
      * @ORM\ManyToOne(targetEntity="ProduitsBundle\Entity\Produit")
      * @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
+=======
+    /**
+     * @var integer
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
      *
      */
     private $produit;

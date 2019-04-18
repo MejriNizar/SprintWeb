@@ -67,6 +67,13 @@
 
         <link rel="stylesheet" href="{{asset('Bundles/AppBundle/css/style.css')}}">
 
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+
     </head>
 <body>
 
@@ -101,24 +108,44 @@
 
                             <li class="active"><a href="#" >Home</a></li>
                             <li class="has-children">
+<<<<<<< HEAD
                                 <a href="{{ path('produits_consulterproduit') }}">Produits</a>
+=======
+                                <a href="{{ path('produits_consulterproduit') }}">Produits </a>
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
                                 <ul class="dropdown">
 
                                 </ul>
                             </li>
                             <li >
-                                <a href="{{  path('service_ap_vente_homepage')}}">Services</a>
+                                <a href="{{  path('service_homepage')}}">Services</a>
 
                             </li>
-                            <li class="has-children">
-                                <a href="{{  path('Offre')}}">Besoin</a>
-                                <ul class="dropdown">
-                                    <li><a href="{{  path('Offre')}}">Offre</a></li>
-                                    <li><a href="{{  path('Offre')}}"> Demande</a></li>
 
-                                </ul>
+
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED" )%}
+
+                            <li class="active">
+                                <a href="{{  path('Afficher_All_offre')}}">Offre</a>
+
                             </li>
+
+                                {% endif %}
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                            <li class="active">
+                                <a href="{{  path('affichage_la_liste_d_demande')}}">Demande</a>
+
+                            </li>
+<<<<<<< HEAD
                             <li><a href="{{  path('Panier')}}"> <i class="fa fa-shopping-cart " aria-hidden="true" style="color: white"></a>
+=======
+
+
+                            {% endif %}
+                            <li >
+                                <a href="{{  path('Blog')}}">Blog</a>
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab
 
                             </li>
 
@@ -138,8 +165,10 @@
                                       <li> <a href="{{ path('fos_user_security_login') }}" class="btn button-style">Connexion</a></li>
 
                                        <li> <a href="{{ path('fos_user_registration_register') }}">Inscrivez_Vous !</a></li>
+
                                     {% endif %}
                                 </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -284,6 +313,15 @@
     <script src="{{ asset('/template/js/main.js') }}"></script>
 
 <script src="{{ asset('Bundles/AppBundle/js/main.js')}}"></script>
+    <script src="{{ asset('template/scripts/M.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('template/scripts/M.js') }}" async="async"></script>
+    <script type="text/javascript">
+        (function() {
+            var script = document.createElement('script'); script.type = 'text/javascript';
+            script.src = "script.js";
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+        })();
+    </script>
 {% endblock %}
 {% block stripe %}
 {% endblock %}

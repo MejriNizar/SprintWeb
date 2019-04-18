@@ -5,16 +5,22 @@ namespace CommandesBundle\Controller;
 use CommandesBundle\Entity\Commande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use CommandesBundle\Entity\ProduitPanier;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+
+
+
+
 use CommandesBundle\Entity\LigneCommande;
 use AppBundle\Entity\FosUser;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+
 use ProduitsBundle\Entity\Produit;
 
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -35,10 +41,15 @@ class CommandeController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+
         $user=  $this->getUser();
 
 
         $commandes = $em->getRepository(LigneCommande::class)->findBy(array('idUser' => $user->getId()));
+
+
+        $commandes = $em->getRepository('CommandesBundle:Commande')->findAll();
+
 
         return $this->render('@Commandes/commande/index.html.twig', array(
             'commandes' => $commandes,
@@ -154,17 +165,25 @@ class CommandeController extends Controller
         $lc=new LigneCommande();
         $user=  $this->getUser();
         $idUser=$user->getId();
+
         $produit = $em->getRepository("ProduitsBundle:Produit")->find($idProduit);
         $lc->setProduit($produit);
         $lc->setIdUser($this->getUser());
+
+
+        $lc->setIdprod($idProduit);
+        $lc->setIdUser($idUser);
+
         $lc->setQuantite(1);
 
 
         $testSurNom=$em->getRepository("CommandesBundle:LigneCommande")->chercherid($idProduit);
         if($testSurNom==null)
-        {$em->persist($lc);
+        {
+            $em->persist($lc);
             $em->flush();
             $lignePanier=$this->getDoctrine()->getRepository(LigneCommande::class)->findPanier($user->getId());
+
 
 
             $em = $this->getDoctrine()->getManager();
@@ -175,18 +194,24 @@ class CommandeController extends Controller
 
         }
 
-        return $this->redirectToRoute('produits_consulterproduit',array('erreur'=>"true"));
+
         // $em->persist($lc);
-        //$em->flush();z
+        //$em->flush();
+
     }
     public function consulterPanierAction()
     {
         $user=  $this->getUser();
+
         $lignePanier=$this->getDoctrine()->getRepository(LigneCommande::class)->findBy(array('idUser' => $user->getId()));
+
+        $lignePanier=$this->getDoctrine()->getRepository(LigneCommande::class)->findPanier($user->getId());
+
         $listProd=$this->getDoctrine()->getRepository(LigneCommande::class)->findProduit();
 
         return $this->render('@Commandes/Default/index.html.twig',array('prod'=>$listProd,'produits'=>$lignePanier));
     }
+
     public function supprimerProduitPanierAction($id)
     {
         $em= $this->getDoctrine()->getManager();
@@ -194,7 +219,9 @@ class CommandeController extends Controller
         return $this->redirectToRoute("consulterPanier");
     }
 
+
 public function addCommandeAction(){
+
     $em = $this->getDoctrine()->getManager();
     $user=  $this->getUser();
     $ligne_commandes = $em->getRepository(LigneCommande::class)->findBy(array('idUser' => $user->getId()));

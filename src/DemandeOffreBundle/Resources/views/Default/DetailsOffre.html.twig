@@ -1,0 +1,91 @@
+
+{%extends 'base.html.twig'  %}
+ {% block body %}
+
+     <li class="breadcrumb-item">
+         <h6 align="center" size=""><font size="60px" color="#ff7f50" class="text-center text-ff7f50-opacity-05"><b> Offre</b></font></h6>
+     </li>
+
+     <div class="site-section bg-light">
+         <div class="container">
+             <div class="row">
+
+                 <div class="col-md-5">
+
+                     <img src="{{asset('ressources/images/Offre/'~offres.photo )}}"  alt="Image" class="img-fluid" width="500" height="500">
+
+
+                 </div>
+                 <div class="col-md-7 mb-5">
+
+
+
+    <form action="#" class="p-5 bg-white">
+
+
+        <div class="row form-group">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label class="text-black" for="Titre"><h6>Titre :</h6></label>
+                <p >{{ offres.titre }}</p>
+            </div>
+            <div class="col-md-12">
+                <label class="text-black" for="Service"><h6>Service:</h6></label>
+                <p>{{ offres.service.nom }}</p>
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12 m-b-55">
+                <label class="text-black" for="budget"><h6>Budget:</h6></label>
+                <p>{{ offres.budget }} Dt</p>
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="description"><h6>Description:</h6></label>
+                <p><{{ offres.description }}/p>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <label class="text-black" for="message"><h6>date</h6></label>
+                <p>{{ offres.dateCreation|date('d-m-y')  }}</p>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <a   class="btn btn-primary py-2 px-4 text-white"  href="{{ path('affichage_la_liste_d_offre')}}" >
+                <span class="glyph fa-edit "   ></span>
+                {% trans %} Back to Offer {% endtrans %}
+            </a>
+        </div>
+
+
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-migrate-3.0.1.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery-ui.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/popper.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.stellar.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.countdown.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/aos.js')}}"></script>
+    <script src="{{ asset('Bundles/AppBundle/js/main.js')}}"></script>
+    <script src="{{ asset('jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('template/scripts/M.js') }}"></script>
+{% endblock %}

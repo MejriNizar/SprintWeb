@@ -20,6 +20,7 @@ produits_listeFournisseur:
 
 produits_ajoutfournisseur:
     path:     /ajoutfournisseur
+<<<<<<< HEAD
     defaults: { _controller: ProduitsBundle:Produits:ajoutfournisseur }
 
 produits_supprimerproduit:
@@ -34,3 +35,6 @@ produits_modifierproduit:
 produits_detailsproduit:
     path:     /detailsproduit/{idProduit}
     defaults: { _controller: ProduitsBundle:Produits:detailsproduit }
+=======
+    defaults: { _controller: ProduitsBundle:Produits:ajoutfournisseur }
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab

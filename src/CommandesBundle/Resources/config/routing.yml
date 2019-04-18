@@ -13,6 +13,7 @@ addProduitPanier:
     path:     /addProduitPanier/{idProduit}
     defaults: { _controller:CommandesBundle:Commande:addProduitPanier }
 
+<<<<<<< HEAD
 addCommande:
     path:     /addCommande
     defaults: { _controller: CommandesBundle:Commande:addCommande }
@@ -31,3 +32,6 @@ payment:
 Pdf:
     path:     /pdf
     defaults: { _controller:CommandesBundle:Commande:Pdf }
+=======
+
+>>>>>>> 1453b8fe36090e5d7587461cd7c31b60229a01ab

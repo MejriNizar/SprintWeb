@@ -1,0 +1,73 @@
+
+{%extends 'base.html.twig'  %}
+ {% block body %}
+     <li class="breadcrumb-item">
+         <h6 align="center" size=""><font size="60px" color="#ff7f50" class="text-center text-ff7f50-opacity-05"><b>Ajouter Offre</b></font></h6>
+     </li>
+     <div class="site-section bg-light">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-7 mb-5">
+
+
+
+
+                     {{ form_start(form) }}
+
+                         <div class="row form-group">
+                             <div class="col-md-6 mb-3 mb-md-0">
+                                 <label class="text-black" for="fname">{% trans %}Budget:{% endtrans %}</label>
+                                 {{ form_widget(form.budget, {'attr': {'class': 'form-control','placeholder':'budget', 'style':'height:80%'} }) }}</br>
+                             </div>
+                             <div class="col-md-6">
+                                 <label class="text-black" for="lname">{% trans %}Titre:{% endtrans %}</label>
+                                 {{ form_widget(form.titre, {'attr': {'class': 'form-control','placeholder':'titre', 'style':'height:80%'} }) }}</br>
+                             </div>
+                         </div>
+
+                         <div class="row form-group">
+
+                             <div class="col-md-12">
+                                 <label class="text-black" for="email">{% trans %}Description:{% endtrans %}</label>
+                                 {{ form_widget(form.description, {'attr': {'class': 'form-control','placeholder':'description', 'style':'height:80%'} }) }}</br>
+                             </div>
+                         </div>
+
+                         <div class="row form-group">
+
+                             <div class="col-md-12">
+                                 <label class="text-black" for="email">{% trans %}Service:{% endtrans %}</label>
+
+                                 {{ form_widget(form.service, { 'attr': {'class': 'form-control rounded-0
+                   sign-register-input','placeholder':'offre'} }) }}
+                             </div>
+                         </div>
+
+                     <div class="row form-group">
+
+                         <div class="col-md-12">
+                             <label class="text-black" for="email">{% trans %}Image:{% endtrans %}</label>
+
+                             {{ form_widget(form.photo,{'attr': {'style':'height:80px;width:700px',  }}) }}</br>
+                         </div>
+                     </div>
+
+
+
+                         <div class="row form-group">
+                             <div class="col-md-12">
+                                 <input type="submit" value="Ajouter Offre" class="btn btn-primary py-2 px-4 text-white">
+                             </div>
+
+                         </div>
+
+
+                     {{ form_end(form) }}
+
+                 </div>
+
+             </div>
+         </div>
+     </div>
+
+ {% endblock %}

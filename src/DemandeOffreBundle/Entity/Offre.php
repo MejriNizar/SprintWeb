@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Offre
  *
  * @ORM\Table(name="offre")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="DemandeOffreBundle\Repository\OffreRepository")
  */
 class Offre
 {
@@ -28,6 +28,12 @@ class Offre
      * @ORM\Column(name="budget", type="integer", nullable=false)
      */
     private $budget;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCreation", type="date", nullable=false)
+     */
+    private $datecreation;
 
     /**
      * @var string
@@ -46,12 +52,13 @@ class Offre
     /**
      * @var \Demande
      *
-     * @ORM\ManyToOne(targetEntity="Demande")
+     * @ORM\ManyToOne(targetEntity="Demande"  )
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="demande_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="demande_id", referencedColumnName="id" , onDelete="CASCADE"  )
      * })
      */
     private $demande;
+
 
     /**
      * @var \ServiceBundle\Entity\service
@@ -196,6 +203,22 @@ class Offre
     public function setUser($user)
     {
         $this->user = $user;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatecreation()
+    {
+        return $this->datecreation;
+    }
+
+    /**
+     * @param \DateTime $datecreation
+     */
+    public function setDatecreation($datecreation)
+    {
+        $this->datecreation = $datecreation;
     }
 
 

@@ -1,0 +1,101 @@
+
+{%extends 'base.html.twig'  %}
+ {% block body %}
+
+     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('Bundles/AppBundle//images/hero_bg_1.jpg')}});" data-aos="fade" data-stellar-background-ratio="0.5">
+         <div class="container">
+             <div class="row align-items-center justify-content-center text-center">
+
+
+             </div>
+         </div>
+     </div>
+     <li class="breadcrumb-item">
+         <a href="#">Modifier une annonce</a>
+     </li>
+
+     <div class="site-section bg-light">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-7 mb-5">
+
+
+
+
+                     {{ form_start(form) }}
+
+                     <div class="row form-group">
+                         <div class="col-md-6 mb-3 mb-md-0">
+                             <label class="text-black" for="fname">{% trans %}Budget:{% endtrans %}</label>
+                             {{ form_widget(form.budget, {'attr': {'class': 'form-control','placeholder':'budget', 'style':'height:80%'} }) }}</br>
+                         </div>
+                         <div class="col-md-6">
+                             <label class="text-black" for="lname">{% trans %}Titre:{% endtrans %}</label>
+                             {{ form_widget(form.titre, {'attr': {'class': 'form-control','placeholder':'titre', 'style':'height:80%'} }) }}</br>
+                         </div>
+                     </div>
+
+                     <div class="row form-group">
+
+                         <div class="col-md-12">
+                             <label class="text-black" for="email">{% trans %}Description:{% endtrans %}</label>
+                             {{ form_widget(form.description, {'attr': {'class': 'form-control','placeholder':'description', 'style':'height:80%'} }) }}</br>
+                         </div>
+                     </div>
+
+                     <div class="row form-group">
+
+                         <div class="col-md-12">
+                             <label class="text-black" for="email">{% trans %}Service:{% endtrans %}</label>
+
+                             {{ form_widget(form.service, { 'attr': {'class': 'form-control rounded-0
+                   sign-register-input','placeholder':'offre'} }) }}
+                         </div>
+                     </div>
+
+                     <div class="row form-group">
+
+                         <div class="col-md-12">
+                             <label class="text-black" for="email">{% trans %}Image:{% endtrans %}</label>
+
+                             {{ form_widget(form.photo,{'attr': {'style':'height:80px;width:700px',  }}) }}</br>
+                         </div>
+                     </div>
+
+                     <div class="row form-group">
+                         <a class="btn btn-primary py-2 px-4 text-white" data-toggle="modal" data-target="#myModal">
+                             <span class="glyph fa-remove " ></span>
+                             {% trans %} Modifier {% endtrans %}
+                         </a>
+                     </div>
+                     <div class="modal fade" id="myModal" role="dialog">
+                         <div class="modal-dialog">
+
+                             <!-- Modal content-->
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal">&times</button>
+                                 </div>
+                                 <div class="modal-body">
+                                     <p>Voulez-vous vraiment modifier cette offre?</p>
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Non</button>
+                                     <button type="submit   "  class="btn btn-primary" value="Modifier"  >Oui</button>
+                                 </div>
+                             </div>
+
+                         </div>
+                     </div>
+
+
+
+                     {{ form_end(form) }}
+
+                 </div>
+
+             </div>
+         </div>
+     </div>
+
+ {% endblock %}

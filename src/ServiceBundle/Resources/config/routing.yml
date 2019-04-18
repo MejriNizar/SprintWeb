@@ -1,3 +1,27 @@
 service_homepage:
-    path:     /
+    path:     /Karim
     defaults: { _controller: ServiceBundle:Default:index }
+categories:
+    path:     /categories
+    defaults: { _controller: ServiceBundle:Categorie:index }
+
+ajouterCategorie:
+    path:     /ajouterCategorie
+    defaults: { _controller: ServiceBundle:Categorie:ajouter }
+
+afficherCategoriesBack:
+    path:     /afficherCategoriesBack
+    defaults: { _controller: ServiceBundle:Categorie:afficherBack }
+modifierCategorie:
+    path:     /modifierCategorie/{id}
+    defaults: { _controller: ServiceBundle:Categorie:modifier }
+supprimerCategorie:
+    path:     /supprimerCategorie/{id}
+    defaults: { _controller: ServiceBundle:Categorie:supprimer }
+chercherCategorie:
+    path:     /chercherCategorie
+    defaults: { _controller: ServiceBundle:Categorie:chercher }
+_graphePie:
+    path:     /graphePie
+    defaults: { _controller: ServiceBundle:Default:stat }
+

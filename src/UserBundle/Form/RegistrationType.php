@@ -24,8 +24,19 @@ class RegistrationType extends AbstractType
             ->add('cin')
             ->add('email')
             ->add('password')
-            ->add('roles')
+            ->add('adresse')
             ->add('num_tel')
+
+
+            ->add('sexe',ChoiceType::class,array(
+                'choices'=>array(
+                    'Homme'=>'Homme',
+                    'Femme'=>'Femme',
+
+                )
+            ))
+
+
             ->add('roles', CollectionType::class, array(
                 'label' => 'Role',
                 'entry_type' => ChoiceType::class,
@@ -34,22 +45,6 @@ class RegistrationType extends AbstractType
                     'expanded' => false,
                     'choices' => array(
                         'Client' => 'ROLE_CLIENT',
-                        'Prestatire' => 'ROLE_PRESTATAIRE',
-                        'Admin' => 'ROLE_ADMIN',
-
-                    ),
-                    'data' => 'ROLE_CLIENT'
-                )
-            ))
-
-            ->add('roles', CollectionType::class, array(
-                'label' => 'Role',
-                'entry_type' => ChoiceType::class,
-                'entry_options' => array(
-                    'label' => false,
-                    'expanded' => false,
-                    'choices' => array(
-                        'Client' => 'ROLE_CLIENT',
 
                         'Admin' => 'ROLE_ADMIN',
 
@@ -58,6 +53,12 @@ class RegistrationType extends AbstractType
                 )
             ))
 
+            ->add('photo_profil', FileType::class, [
+                'data_class' => null,
+                'multiple' => false,
+                'attr'     => [
+                    'accept' => 'image/*',
+                ]])
 
 
         ;
