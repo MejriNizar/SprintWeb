@@ -1,0 +1,3 @@
+commandes_homepage:
+    path:     /
+    defaults: { _controller: CommandesBundle:Default:index }

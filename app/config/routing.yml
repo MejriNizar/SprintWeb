@@ -1,11 +1,4 @@
-fix:
-    resource: "@FixBundle/Controller/"
-    type:     annotation
-    prefix:   /
 
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
@@ -24,3 +17,23 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
+produits:
+    resource: "@ProduitsBundle/Resources/config/routing.yml"
+    prefix: /produits
+
+commandes:
+    resource: "@CommandesBundle/Resources/config/routing.yml"
+    prefix:   /commandes
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /forum
+
+service:
+    resource: "@ServiceBundle/Resources/config/routing.yml"
+    prefix:   /service
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
